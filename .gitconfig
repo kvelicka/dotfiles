@@ -1,0 +1,11 @@
+[user]
+	name = Karolis Velicka
+	email = karolis.velicka@gmail.com
+[alias]
+	co = checkout
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	s = status
+	d = difftool -y
+	cc = commit -a
+[core]
+	editor = vim
