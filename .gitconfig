@@ -9,3 +9,6 @@
 	cc = commit -a
 [core]
 	editor = vim
+[filter "media"]
+	clean = git-media-clean %f
+	smudge = git-media-smudge %f
