@@ -131,7 +131,7 @@ if has('gui_running')
     set background=light
 endif
 
-set backupdir=~/.vim/backup
+set backupdir=~/backup/vim
 
 " dark for solarized dark, light for the light one
 set background=light

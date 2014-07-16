@@ -43,7 +43,7 @@ ZSH_THEME="robbyrussell"
 plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
-source ~/.bash_aliases
+source ~/.karl_rc
 
 # Customize to your needs...
 export PATH=/home/karl/.cabal/bin:/usr/local/heroku/bin:$PATH
