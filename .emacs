@@ -8,7 +8,7 @@
 (load-theme 'solarized-light t)
 
 ; Setting backups to a separate folder
-(setq backup-directory-alist `(("." . "~/.emacs.d/backups")))
+(setq backup-directory-alist `(("." . "~/backups/emacs)))
 (setq backup-by-copying t)
 (setq delete-old-versions t
       kept-new-versions 6
