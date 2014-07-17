@@ -1,1 +1,8 @@
+# Enable aliases
 source .aliases
+
+# Shortcut for the ghc HEAD's compiler 
+export head="/Volumes/GHC/build/ghc-build/inplace/bin/ghc-stage2"
+
+# Env vars
+export XML_CATALOG_FILES="/usr/local/etc/xml/catalog"
