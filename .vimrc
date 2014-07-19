@@ -136,6 +136,8 @@ set backupdir=~/backup/vim
 set background=light
 " turning off physical line wrapping
 set textwidth=0 wrapmargin=0
+" set autoindent for simple indentation
+set autoindent
 
 if executable('ocamlmerlin') && has('python')
     let s:ocamlmerlin = substitute(system('opam config var share'), '\n$', '', '''') . "/ocamlmerlin"
