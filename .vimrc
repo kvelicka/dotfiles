@@ -1,3 +1,5 @@
+" Pathogen
+execute pathogen#infect()
 
 " An example for a vimrc file.
 "
@@ -101,6 +103,9 @@ set expandtab
 set tabstop=2
 set shiftwidth=2
 
+" OSX Clipboard
+set clipboard=unnamed
+
 filetype plugin on
 filetype indent on
 filetype plugin indent on
@@ -118,6 +123,9 @@ if has("gui_running")
     set guioptions+=e
     set t_Co=256
     set guitablabel=%M\ %t
+    set lines=45
+    set columns=85
+    set guifont=Monaco:h12
 endif
 
 map 0 ^
@@ -126,23 +134,40 @@ if $COLORTERM == 'gnome-terminal'
   set t_Co=256
 endif
 
+" dark for solarized dark, light for the light one
+set background=dark
+colorscheme solarized
+
 if has('gui_running')
-    set background=light
+    set background=dark
 endif
 
 set backupdir=~/backup/vim
 
-" dark for solarized dark, light for the light one
-set background=light
+
+
 " turning off physical line wrapping
 set textwidth=0 wrapmargin=0
 " set autoindent for simple indentation
 set autoindent
 
+" Merlin specific
 if executable('ocamlmerlin') && has('python')
     let s:ocamlmerlin = substitute(system('opam config var share'), '\n$', '', '''') . "/ocamlmerlin"
     execute "set rtp+=".s:ocamlmerlin."/vim"
     execute "set rtp+=".s:ocamlmerlin."/vimbufsync"
 endif
+let g:syntastic_ocaml_checkers = ['merlin']
 
-autocmd FileType ocaml source substitute(system('opam config var share'), '\n$', '', '''') . "/typerex/ocp-indent/ocp-indent.vim"
+" ocp-indent specific
+let g:ocp_indent_vimfile = system("opam config var share")
+let g:ocp_indent_vimfile = substitute(g:ocp_indent_vimfile, '[\r\n]*$', '', '')
+let g:ocp_indent_vimfile = g:ocp_indent_vimfile . "/vim/syntax/ocp-indent.vim"
+
+autocmd FileType ocaml exec ":source " . g:ocp_indent_vimfile
+
+" Set a title to filename
+set title
+
+set t_ts=]1;
+set t_fs=

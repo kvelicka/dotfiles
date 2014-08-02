@@ -6,3 +6,4 @@ export head="/Volumes/GHC/build/ghc-build/inplace/bin/ghc-stage2"
 
 # Env vars
 export XML_CATALOG_FILES="/usr/local/etc/xml/catalog"
+export PATH=$PATH:/Users/kvelicka/bin
