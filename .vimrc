@@ -135,12 +135,12 @@ if $COLORTERM == 'gnome-terminal'
 endif
 
 " dark for solarized dark, light for the light one
-set background=dark
+set background=light
 colorscheme solarized
 
-if has('gui_running')
-    set background=dark
-endif
+" if has('gui_running')
+    " set background=dark
+" endif
 
 set backupdir=~/backup/vim
 
