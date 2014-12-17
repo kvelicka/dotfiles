@@ -1,48 +1,64 @@
 " Pathogen
 execute pathogen#infect()
 
-" An example for a vimrc file.
-"
-" Maintainer:	Bram Moolenaar <Bram@vim.org>
-" Last change:	2011 Apr 15
-"
-" To use it, copy it to
-"     for Unix and OS/2:  ~/.vimrc
-"	      for Amiga:  s:.vimrc
-"  for MS-DOS and Win32:  $VIM\_vimrc
-"	    for OpenVMS:  sys$login:.vimrc
-
-" When started as "evim", evim.vim will already have done these settings.
-if v:progname =~? "evim"
-  finish
-endif
-
-" Use Vim settings, rather than Vi settings (much better!).
-" This must be first, because it changes other options as a side effect.
+" Ensure we're using vim, not vi
 set nocompatible
 
-" allow backspacing over everything in insert mode
+" Allow backspacing over anything in insert mode
 set backspace=indent,eol,start
 
-if has("vms")
-  set nobackup		" do not keep a backup file, use versions instead
-else
-  set backup		" keep a backup file
+" Set backup files
+set backup
+set backupdir=~/backup/vim
+
+set history=50 " Keep 50 commands in history
+set ruler " Show cursor position at all times
+set showcmd " Show incomplete commands
+
+" ----- Stuff from "Vim in 11 years" -----
+" Fix long line movement
+:nmap j gj
+:nmap k gk
+
+" Add emacs-like bindings for the command line
+:cnoremap <C-a> <Home>
+:cnoremap <C-b> <Left>
+:cnoremap <C-f> <Right>
+:cnoremap <C-d> <Delete>
+:cnoremap <M-b> <S-Left>
+:cnoremap <M-f> <S-Right>
+:cnoremap <M-d> <S-Right><Delete>
+:cnoremap <Esc>b <S-Left>
+:cnoremap <Esc>f <S-Right>
+:cnoremap <Esc>d <S-Right><Delete>
+:cnoremap <C-g> <C-c>
+
+" Emacs style highlight-as-you-type search
+:set incsearch
+" Only match case when capital letters are used
+:set ignorecase
+:set smartcase
+" Highlight the currently searched term
+:set hlsearch
+:nmap \q :nohlsearch<CR>
+
+" C-e to open previous buffer
+:nmap <C-e> :e#<CR>
+
+" Switch between buffers
+:nmap <C-n> :bnext<CR>
+:nmap <C-p> :bprev<CR>
+
+" Ensure 256 colour term support is enabled 
+if $TERM == "xterm-256color" || $TERM == "screen-256color" || $COLORTERM == "gnome-terminal"
+  set t_Co=256
 endif
-set history=50		" keep 50 lines of command line history
-set ruler		" show the cursor position all the time
-set showcmd		" display incomplete commands
-set incsearch		" do incremental searching
 
-" For Win32 GUI: remove 't' flag from 'guioptions': no tearoff menu entries
-" let &guioptions = substitute(&guioptions, "t", "", "g")
-
-" Don't use Ex mode, use Q for formatting
-map Q gq
-
-" CTRL-U in insert mode deletes a lot.  Use CTRL-G u to first break undo,
-" so that you can undo CTRL-U after inserting a line break.
-inoremap <C-U> <C-G>u<C-U>
+" Tabulation options
+:nmap \t :set expandtab tabstop=4 shiftwidth=4 softtabstop=4<CR>
+:nmap \T :set expandtab tabstop=8 shiftwidth=8 softtabstop=4<CR>
+:nmap \M :set noexpandtab tabstop=8 softtabstop=4 shiftwidth=4<CR>
+:nmap \m :set expandtab tabstop=2 shiftwidth=2 softtabstop=2<CR>
 
 " In many terminal emulators the mouse works just fine, thus enable it.
 if has('mouse')
@@ -98,23 +114,21 @@ if !exists(":DiffOrig")
 endif
 
 " Custom settings by kvelicka
-set nu
-set expandtab
-set tabstop=2
-set shiftwidth=2
+set nu " enable line numbers
+set expandtab " spaces instead of tabs
+set tabstop=4
+set shiftwidth=4
 
 " OSX Clipboard
 set clipboard=unnamed
 
+" Enable highlighting etc
 filetype plugin on
 filetype indent on
 filetype plugin indent on
+syntax enable
 
 set wildignore=*.o,*~,*.pyc
-set ignorecase
-set ignorecase
-set showmatch
-syntax enable
 
 " Set extra options when running in GUI mode
 if has("gui_running")
@@ -128,23 +142,11 @@ if has("gui_running")
     set guifont=Monaco:h12
 endif
 
-map 0 ^
+map 0 ^ " 0 goes to the first character, not character #0
 
-if $COLORTERM == 'gnome-terminal'
-  set t_Co=256
-endif
-
-" dark for solarized dark, light for the light one
-set background=light
+" Set up colorscheme
+set background=light " dark for solarized dark, light for the light one
 colorscheme solarized
-
-" if has('gui_running')
-    " set background=dark
-" endif
-
-set backupdir=~/backup/vim
-
-
 
 " turning off physical line wrapping
 set textwidth=0 wrapmargin=0
@@ -171,3 +173,4 @@ set title
 
 set t_ts=]1;
 set t_fs=
+
