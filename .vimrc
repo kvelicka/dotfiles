@@ -1,5 +1,5 @@
 " Pathogen
-execute pathogen#infect()
+" execute pathogen#infect()
 
 " Ensure we're using vim, not vi
 set nocompatible
@@ -146,7 +146,7 @@ map 0 ^ " 0 goes to the first character, not character #0
 
 " Set up colorscheme
 set background=light " dark for solarized dark, light for the light one
-colorscheme solarized
+" colorscheme solarized
 
 " turning off physical line wrapping
 set textwidth=0 wrapmargin=0
