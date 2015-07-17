@@ -19,6 +19,5 @@ alias ec='emacsclient -c'
 
 alias  gp='git push'
 alias  gs='git status'
-alias gca='git commit -a'
 alias gco='git checkout'
 alias gdd='git diff'
