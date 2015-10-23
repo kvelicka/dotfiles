@@ -38,6 +38,7 @@ set showcmd " Show incomplete commands
 " Only match case when capital letters are used
 :set ignorecase
 :set smartcase
+
 " Highlight the currently searched term
 :set hlsearch
 :nmap \q :nohlsearch<CR>
@@ -53,12 +54,6 @@ set showcmd " Show incomplete commands
 if $TERM == "xterm-256color" || $TERM == "screen-256color" || $COLORTERM == "gnome-terminal"
   set t_Co=256
 endif
-
-" Tabulation options
-:nmap \t :set expandtab tabstop=4 shiftwidth=4 softtabstop=4<CR>
-:nmap \T :set expandtab tabstop=8 shiftwidth=8 softtabstop=4<CR>
-:nmap \M :set noexpandtab tabstop=8 softtabstop=4 shiftwidth=4<CR>
-:nmap \m :set expandtab tabstop=2 shiftwidth=2 softtabstop=2<CR>
 
 " In many terminal emulators the mouse works just fine, thus enable it.
 if has('mouse')
@@ -142,7 +137,8 @@ if has("gui_running")
     set guifont=Monaco:h12
 endif
 
-map 0 ^ " 0 goes to the first character, not character #0
+" 0 goes to the first character, not character #0
+map 0 ^ 
 
 " Set up colorscheme
 set background=light " dark for solarized dark, light for the light one
@@ -153,7 +149,7 @@ set textwidth=0 wrapmargin=0
 " set autoindent for simple indentation
 set autoindent
 
-" Merlin specific
+" Merlin (i.e. OCaml) specific
 if executable('ocamlmerlin') && has('python')
     let s:ocamlmerlin = substitute(system('opam config var share'), '\n$', '', '''') . "/ocamlmerlin"
     execute "set rtp+=".s:ocamlmerlin."/vim"
@@ -171,6 +167,7 @@ autocmd FileType ocaml exec ":source " . g:ocp_indent_vimfile
 " Set a title to filename
 set title
 
+" show filename in the title/header (I think?)
 set t_ts=]1;
 set t_fs=
 
