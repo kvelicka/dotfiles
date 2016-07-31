@@ -15,7 +15,7 @@ alias pyserver='py3 -m SimpleHTTPServer'
 
 alias  e='emacsclient'
 alias et='emacsclient -t'
-alias ec='emacsclient -c'
+alias ec='emacsclient -nc'
 
 alias  gp='git push'
 alias  gs='git status'

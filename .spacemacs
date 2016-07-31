@@ -25,17 +25,18 @@ values."
      ;; ----------------------------------------------------------------
      ;; auto-completion
      ;; better-defaults
+     c-c++
      emacs-lisp
-     (latex :variables latex-enable-auto-fill nil)
+     erlang
      git
+     (haskell :variables haskell-enable-ghc-mod-support nil)
+     (latex :variables latex-enable-auto-fill nil)
      markdown
      org
-     (haskell :variables haskell-enable-ghc-mod-support nil)
-     c-c++
+     spell-checking
      ;; (shell :variables
      ;;        shell-default-height 30
      ;;        shell-default-position 'bottom)
-     spell-checking
      ;; syntax-checking
      )
    ;; List of additional packages that will be installed without being
@@ -82,6 +83,7 @@ values."
    ;; with 2 themes variants, one dark and one light)
    dotspacemacs-themes '(solarized-light
                          solarized-dark
+                         spacemacs-light
                          spacemacs-dark)
    ;; If non nil the cursor color matches the state color.
    dotspacemacs-colorize-cursor-according-to-state t
@@ -191,6 +193,7 @@ values."
 It is called immediately after `dotspacemacs/init'.  You are free to put any
 user code."
   (add-to-list 'exec-path "~/.cabal/bin/")
+  (setq ispell-dictionary "en_GB")
   )
 
 (defun dotspacemacs/user-config ()
