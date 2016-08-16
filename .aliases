@@ -3,7 +3,7 @@ alias l='ll'
 alias la='ls -lah'
 
 # TODO make cross-platform
-alias nnn='thunar .'
+alias nnn='nautilus .'
 # Ubuntu specific
 alias install='sudo apt-get install -y'
 alias update='sudo apt-get update'
@@ -22,3 +22,5 @@ alias  gs='git status'
 alias gco='git checkout'
 alias gdd='git diff'
 alias gcp='git cherry-pick'
+
+alias redo='/home/user/code/docks/duma-redo.sh'
