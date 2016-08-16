@@ -11,3 +11,4 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 #source $HOME/.bashrc
+export PATH="/home/user/prefix/bin:$PATH"
