@@ -1,6 +1,3 @@
-" Pathogen
-" execute pathogen#infect()
-
 " Ensure we're using vim, not vi
 set nocompatible
 
@@ -110,7 +107,7 @@ endif
 
 " Custom settings by kvelicka
 set nu " enable line numbers
-set expandtab " spaces instead of tabs
+set noexpandtab " spaces instead of tabs
 set tabstop=4
 set shiftwidth=4
 
@@ -138,31 +135,16 @@ if has("gui_running")
 endif
 
 " 0 goes to the first character, not character #0
-map 0 ^ 
+" map 0 ^ 
 
 " Set up colorscheme
-set background=light " dark for solarized dark, light for the light one
-" colorscheme solarized
+set background=dark " dark for solarized dark, light for the light one
+colorscheme solarized
 
 " turning off physical line wrapping
 set textwidth=0 wrapmargin=0
 " set autoindent for simple indentation
 set autoindent
-
-" Merlin (i.e. OCaml) specific
-if executable('ocamlmerlin') && has('python')
-    let s:ocamlmerlin = substitute(system('opam config var share'), '\n$', '', '''') . "/ocamlmerlin"
-    execute "set rtp+=".s:ocamlmerlin."/vim"
-    execute "set rtp+=".s:ocamlmerlin."/vimbufsync"
-endif
-let g:syntastic_ocaml_checkers = ['merlin']
-
-" ocp-indent specific
-let g:ocp_indent_vimfile = system("opam config var share")
-let g:ocp_indent_vimfile = substitute(g:ocp_indent_vimfile, '[\r\n]*$', '', '')
-let g:ocp_indent_vimfile = g:ocp_indent_vimfile . "/vim/syntax/ocp-indent.vim"
-
-autocmd FileType ocaml exec ":source " . g:ocp_indent_vimfile
 
 " Set a title to filename
 set title
@@ -171,3 +153,9 @@ set title
 set t_ts=]1;
 set t_fs=
 
+" better tab completion
+set wildmode=longest,list,full
+set wildmenu
+
+" non-saved tabs can be hidden (i.e. non-visible)
+set hidden
