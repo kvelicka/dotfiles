@@ -159,3 +159,7 @@ set wildmenu
 
 " non-saved tabs can be hidden (i.e. non-visible)
 set hidden
+
+" switch solarized themes
+call togglebg#map("<F5>")
+
