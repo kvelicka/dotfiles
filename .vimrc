@@ -1,12 +1,16 @@
 " Ensure we're using vim, not vi
 set nocompatible
 
+" Enable pathogen
+execute pathogen#infect()
+
 " Allow backspacing over anything in insert mode
 set backspace=indent,eol,start
 
 " Set backup files
 set backup
 set backupdir=~/backup/vim
+set dir=~/backup/vim
 
 set history=50 " Keep 50 commands in history
 set ruler " Show cursor position at all times
@@ -161,5 +165,26 @@ set wildmenu
 set hidden
 
 " switch solarized themes
-call togglebg#map("<F5>")
+call togglebg#map("<F4>")
 
+" enable ctrlp.vim
+let g:ctrlp_map= '<c-y>'
+
+" show tabs etc, \w to toggle.
+:set list listchars=tab:>-,trail:~,extends:>,precedes:<
+:nmap \w :set list!<CR>
+
+" start of default statusline
+set statusline=%f\ %h%w%m%r\ 
+
+" Syntastic statusline
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+" end of default statusline (with ruler)
+set statusline+=%=%(%l,%c%V\ %=\ %P%)
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 0
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
