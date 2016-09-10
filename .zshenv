@@ -15,5 +15,7 @@ export head="/Volumes/GHC/build/ghc-build/inplace/bin/ghc-stage2"
 
 # Env vars
 export XML_CATALOG_FILES="/usr/local/etc/xml/catalog"
-export PATH=/Users/kvelicka/bin:/usr/local/bin:$PATH
+export PATH=/Users/kvelicka/.local/bin:$PATH
+export PATH=/Users/kvelicka/bin:$PATH
+export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/Qt-5.3.2/bin:$PATH
