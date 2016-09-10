@@ -20,6 +20,11 @@ set showcmd " Show incomplete commands
 " Fix long line movement
 :nmap j gj
 :nmap k gk
+" Professor VIM says '87% of users prefer jj over esc', jj abrams strongly disagrees
+imap jj <Esc>
+
+" sudo save!
+cmap w!! %!sudo tee > /dev/null %
 
 " Add emacs-like bindings for the command line
 :cnoremap <C-a> <Home>
@@ -37,6 +42,7 @@ set showcmd " Show incomplete commands
 " Emacs style highlight-as-you-type search
 :set incsearch
 " Only match case when capital letters are used
+:set infercase
 :set ignorecase
 :set smartcase
 
@@ -51,21 +57,12 @@ set showcmd " Show incomplete commands
 :nmap <C-n> :bnext<CR>
 :nmap <C-p> :bprev<CR>
 
-" Ensure 256 colour term support is enabled 
-if $TERM == "xterm-256color" || $TERM == "screen-256color" || $COLORTERM == "gnome-terminal"
-  set t_Co=256
-endif
 
 " In many terminal emulators the mouse works just fine, thus enable it.
 if has('mouse')
   set mouse=a
 endif
 
-" Switch syntax highlighting on, when the terminal has colors
-" Also switch on highlighting the last used search pattern.
-if &t_Co > 2 || has("gui_running")
-  syntax on
-endif
 
 " Only do this part when compiled with support for autocommands.
 if has("autocmd")
@@ -75,6 +72,7 @@ if has("autocmd")
   " 'cindent' is on in C files, etc.
   " Also load indent files, to automatically do language-dependent indenting.
   filetype plugin indent on
+  autocmd bufwritepost .vimrc source $MYVIMRC
 
   " Put these in an autocmd group, so that we can delete them easily.
   augroup vimrcEx
@@ -94,65 +92,40 @@ if has("autocmd")
     \ endif
 
   augroup END
-
-else
-
-  set autoindent		" always set autoindenting on
-
 endif " has("autocmd")
 
-" Convenient command to see the difference between the current buffer and the
-" file it was loaded from, thus the changes you made.
-" Only define it when not defined already.
-if !exists(":DiffOrig")
-  command DiffOrig vert new | set bt=nofile | r ++edit # | 0d_ | diffthis
-		  \ | wincmd p | diffthis
-endif
-
-" Custom settings by kvelicka
-set nu " enable line numbers
-set noexpandtab " spaces instead of tabs
-set tabstop=4
-set shiftwidth=4
-
 " OSX Clipboard
-set clipboard=unnamed
-
-" Enable highlighting etc
-filetype plugin on
-filetype indent on
-filetype plugin indent on
-syntax enable
+" doesn't work without +X11
+" set clipboard=+unnamed
 
 set wildignore=*.o,*~,*.pyc
+
+" Set up colorscheme
+set t_Co=256
+colorscheme solarized
+syntax on
 
 " Set extra options when running in GUI mode
 if has("gui_running")
     set guioptions-=T
     set guioptions-=r
     set guioptions+=e
-    set t_Co=256
     set guitablabel=%M\ %t
     set lines=45
     set columns=85
-    set guifont=Monaco:h12
+    set guifont=Monaco:h11
+    set background=dark " dark for solarized dark, light for the light one
+else
+    set background=dark " dark for solarized dark, light for the light one
 endif
 
-" 0 goes to the first character, not character #0
-" map 0 ^ 
-
-" Set up colorscheme
-set background=dark " dark for solarized dark, light for the light one
-colorscheme solarized
-
 " turning off physical line wrapping
-set textwidth=0 wrapmargin=0
-" set autoindent for simple indentation
-set autoindent
+" set textwidth=0 wrapmargin=0 (old config)
+set textwidth=79
+set formatoptions=qrn1 "(default was [t]croql, current may need t too)
 
 " Set a title to filename
 set title
-
 " show filename in the title/header (I think?)
 set t_ts=]1;
 set t_fs=
@@ -164,18 +137,60 @@ set wildmenu
 " non-saved tabs can be hidden (i.e. non-visible)
 set hidden
 
+" enable line numbers
+set nu
+
+" show tabs etc, \w to toggle.
+:set list listchars=tab:>-,trail:~,extends:>,precedes:<
+:nmap \w :set list!<CR>
+
+" Spell checking for latex files
+au FileType tex set spl=en_gb spell
+
+au BufNewFile,BufRead *.md set filetype=markdown
+
+function! Indent_tabs()
+    setl softtabstop=4
+    setl shiftwidth=4
+    setl tabstop=4
+    setl noexpandtab
+endfunction
+
+function! Indent_4_spaces()
+    setl expandtab
+    setl autoindent
+    setl shiftwidth=4
+    setl tabstop=4
+    setl softtabstop=4
+endfunction
+
+function! Indent_2_spaces()
+    setl expandtab
+    setl autoindent
+    setl shiftwidth=2
+    setl tabstop=2
+    setl softtabstop=2
+endfunction
+
+set expandtab autoindent shiftwidth=4 tabstop=4 softtabstop=4
+au FileType erlang call Indent_tabs()
+au FileType go call Indent_tabs()
+au FileType haskell call Indent_2_spaces()
+au FileType html call Indent_2_spaces()
+au FileType javascript call Indent_2_spaces()
+au FileType python call Indent_4_spaces()
+au FileType ruby call Indent_2_spaces()
+
+""""""""""""""" PLUGIN STUFF """""""""""""
+
 " switch solarized themes
 call togglebg#map("<F4>")
 
 " enable ctrlp.vim
 let g:ctrlp_map= '<c-y>'
 
-" show tabs etc, \w to toggle.
-:set list listchars=tab:>-,trail:~,extends:>,precedes:<
-:nmap \w :set list!<CR>
-
 " start of default statusline
-set statusline=%f\ %h%w%m%r\ 
+set statusline=%f\ %h%w%m%r\
 
 " Syntastic statusline
 set statusline+=%#warningmsg#
@@ -188,3 +203,4 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+let g:syntastic_disabled_filetypes = ['sass']
