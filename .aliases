@@ -31,3 +31,5 @@ alias gcp='git cherry-pick'
 alias tmux='tmux -2'
 # Work stuff
 alias redo='/home/user/code/docks/duma-redo.sh'
+alias runtest='/home/user/code/docks/duma-runtest.sh'
+alias dumatest='redo && runtest'
