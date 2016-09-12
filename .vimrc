@@ -190,7 +190,7 @@ call togglebg#map("<F4>")
 let g:ctrlp_map= '<c-y>'
 
 " start of default statusline
-set statusline=%f\ %h%w%m%r\
+set statusline=%f\ %h%w%m%r\ 
 
 " Syntastic statusline
 set statusline+=%#warningmsg#
