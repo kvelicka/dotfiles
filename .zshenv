@@ -1,9 +1,3 @@
-# Add GHC 7.10.3 to the PATH, via https://ghcformacosx.github.io/
-export GHC_DOT_APP="/Applications/ghc-7.10.3.app"
-if [ -d "$GHC_DOT_APP" ]; then
-  export PATH="${HOME}/.cabal/bin:${GHC_DOT_APP}/Contents/bin:${PATH}"
-fi
-
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
@@ -19,3 +13,10 @@ export PATH=/Users/kvelicka/.local/bin:$PATH
 export PATH=/Users/kvelicka/bin:$PATH
 export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/Qt-5.3.2/bin:$PATH
+
+# Add GHC 7.10.3 to the PATH, via https://ghcformacosx.github.io/
+export GHC_DOT_APP="/Applications/ghc-7.10.3.app"
+if [ -d "$GHC_DOT_APP" ]; then
+  export PATH="${PATH}:${HOME}/.cabal/bin:${GHC_DOT_APP}/Contents/bin"
+fi
+
