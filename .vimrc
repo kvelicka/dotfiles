@@ -204,3 +204,9 @@ let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_disabled_filetypes = ['sass']
+
+
+""""""""""""""" NEOVIM STUFF """""""""""""
+if has('nvim')
+    tnoremap <C-[> <C-\><C-n>
+endif
