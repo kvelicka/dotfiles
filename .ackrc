@@ -1,5 +1,7 @@
 --ignore-ack-defaults
 --ignore-directory=is:.bzr
+--ignore-directory=is:.stack-work
+--ignore-directory=is:.cabal-sandbox
 --ignore-directory=is:.cdv
 --ignore-directory=is:~.dep
 --ignore-directory=is:~.dot
