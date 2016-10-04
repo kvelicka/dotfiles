@@ -40,8 +40,15 @@ ZSH_THEME="robbyrussell"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git wd)
+plugins=(git wd tmuxinator)
 
 source $ZSH/oh-my-zsh.sh
 source ~/.aliases
 
+setxkbmap -layout us -option ctrl:nocaps
+
+export DISABLE_AUTO_TITLE=true
+
+#TERM="xterm-256color"
+
+source ~/scripts/local_init_erl_libs.sh

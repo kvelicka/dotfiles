@@ -51,7 +51,7 @@ cmap w!! %!sudo tee > /dev/null %
 :nmap \q :nohlsearch<CR>
 
 " C-e to open previous buffer
-:nmap <C-e> :e#<CR>
+" :nmap <C-e> :e#<CR>
 
 " Switch between buffers
 :nmap <C-n> :bnext<CR>
@@ -178,7 +178,7 @@ au FileType go call Indent_tabs()
 au FileType haskell call Indent_2_spaces()
 au FileType html call Indent_2_spaces()
 au FileType javascript call Indent_2_spaces()
-au FileType python call Indent_4_spaces()
+au FileType python call Indent_tabs()
 au FileType ruby call Indent_2_spaces()
 
 """"""""""""""" PLUGIN STUFF """""""""""""
@@ -187,7 +187,7 @@ au FileType ruby call Indent_2_spaces()
 call togglebg#map("<F4>")
 
 " enable ctrlp.vim
-let g:ctrlp_map= '<c-y>'
+let g:ctrlp_map= '<c-m>'
 
 " start of default statusline
 set statusline=%f\ %h%w%m%r\ 
