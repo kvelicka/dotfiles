@@ -187,7 +187,7 @@ au FileType ruby call Indent_2_spaces()
 call togglebg#map("<F4>")
 
 " enable ctrlp.vim
-let g:ctrlp_map= '<c-m>'
+let g:ctrlp_map= '<c-p>'
 
 " start of default statusline
 set statusline=%f\ %h%w%m%r\ 
