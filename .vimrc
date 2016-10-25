@@ -54,8 +54,8 @@ cmap w!! %!sudo tee > /dev/null %
 " :nmap <C-e> :e#<CR>
 
 " Switch between buffers
-:nmap <C-n> :bnext<CR>
-:nmap <C-p> :bprev<CR>
+":nmap <C-n> :bnext<CR>
+":nmap <C-p> :bprev<CR>
 
 
 " In many terminal emulators the mouse works just fine, thus enable it.
@@ -98,7 +98,7 @@ endif " has("autocmd")
 " doesn't work without +X11
 " set clipboard=+unnamed
 
-set wildignore=*.o,*~,*.pyc
+set wildignore=*.o,*~,*.pyc,*.beam
 
 " Set up colorscheme
 set t_Co=256
@@ -141,20 +141,28 @@ set hidden
 set nu
 
 " show tabs etc, \w to toggle.
-:set list listchars=tab:>-,trail:~,extends:>,precedes:<
-:nmap \w :set list!<CR>
+set list listchars=tab:>-,trail:~,extends:>,precedes:< 
+nmap \w :set list!<CR>
 
 " Spell checking for latex files
 au FileType tex set spl=en_gb spell
 
 au BufNewFile,BufRead *.md set filetype=markdown
 
-function! Indent_tabs()
+function! Indent_tabs_4s()
     setl softtabstop=4
     setl shiftwidth=4
     setl tabstop=4
     setl noexpandtab
 endfunction
+
+function! Indent_tabs_2s()
+    setl softtabstop=2
+    setl shiftwidth=2
+    setl tabstop=2
+    setl noexpandtab
+endfunction
+
 
 function! Indent_4_spaces()
     setl expandtab
@@ -173,12 +181,12 @@ function! Indent_2_spaces()
 endfunction
 
 set expandtab autoindent shiftwidth=4 tabstop=4 softtabstop=4
-au FileType erlang call Indent_tabs()
-au FileType go call Indent_tabs()
+au FileType erlang call Indent_tabs_2s()
+au FileType go call Indent_tabs_2s()
 au FileType haskell call Indent_2_spaces()
 au FileType html call Indent_2_spaces()
 au FileType javascript call Indent_2_spaces()
-au FileType python call Indent_tabs()
+au FileType python call Indent_tabs_2s()
 au FileType ruby call Indent_2_spaces()
 
 """"""""""""""" PLUGIN STUFF """""""""""""
