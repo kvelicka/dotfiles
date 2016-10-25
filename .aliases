@@ -15,6 +15,7 @@ alias pyserver='py3 -m SimpleHTTPServer'
 
 alias vi='nvim'
 alias nv='nvim'
+alias vimrc='vi ~/.vimrc'
 alias  e='emacsclient'
 alias et='emacsclient -t'
 alias ec='emacsclient -nc'
