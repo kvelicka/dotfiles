@@ -113,7 +113,7 @@ if has("gui_running")
     set guitablabel=%M\ %t
     set lines=45
     set columns=85
-    set guifont=Monaco:h11
+    set guifont="Source Code Pro:h13"
     set background=dark " dark for solarized dark, light for the light one
 else
     set background=dark " dark for solarized dark, light for the light one
@@ -141,7 +141,7 @@ set hidden
 set nu
 
 " show tabs etc, \w to toggle.
-set list listchars=tab:>-,trail:~,extends:>,precedes:< 
+set list listchars=tab:»\ ,trail:~,extends:>,precedes:< 
 nmap \w :set list!<CR>
 
 " Spell checking for latex files
@@ -186,7 +186,7 @@ au FileType go call Indent_tabs_2s()
 au FileType haskell call Indent_2_spaces()
 au FileType html call Indent_2_spaces()
 au FileType javascript call Indent_2_spaces()
-au FileType python call Indent_tabs_2s()
+au FileType python call Indent_tabs_4s()
 au FileType ruby call Indent_2_spaces()
 
 """"""""""""""" PLUGIN STUFF """""""""""""
