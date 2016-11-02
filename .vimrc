@@ -119,6 +119,13 @@ else
     set background=dark " dark for solarized dark, light for the light one
 endif
 
+if has("unix")
+  let s:uname = system("uname -s")
+  if s:uname == "Darwin\n"
+    set background=light
+  endif
+endif
+
 " turning off physical line wrapping
 " set textwidth=0 wrapmargin=0 (old config)
 set textwidth=79
