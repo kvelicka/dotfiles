@@ -113,7 +113,7 @@ if has("gui_running")
     set guitablabel=%M\ %t
     set lines=45
     set columns=85
-    set guifont="Source Code Pro:h13"
+    set guifont="Input Mono:h11"
     set background=dark " dark for solarized dark, light for the light one
 else
     set background=dark " dark for solarized dark, light for the light one
@@ -147,7 +147,9 @@ nmap \w :set list!<CR>
 " Spell checking for latex files
 au FileType tex set spl=en_gb spell
 
+" Set syntax highlighting for new file types
 au BufNewFile,BufRead *.md set filetype=markdown
+au BufNewFile,BufRead *.do set filetype=sh
 
 function! Indent_tabs_4s()
     setl softtabstop=4
