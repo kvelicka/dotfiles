@@ -12,3 +12,4 @@ fi
 
 #source $HOME/.bashrc
 export PATH="/home/user/prefix/bin:$PATH"
+

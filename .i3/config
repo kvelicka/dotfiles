@@ -37,7 +37,7 @@ set $mod Mod4
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec gnome-terminal
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -172,8 +172,8 @@ bar {
 
 # Volume controls
 bindsym Print exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause
-bindsym Scroll_Lock exec pactl set-sink-volume 1 -5%
-bindsym Pause exec pactl set-sink-volume 1 +5%
+bindsym Scroll_Lock exec pactl set-sink-volume $(pactl list sinks | grep Sink | cut -f 2 -d# | tail -n 1) -5%
+bindsym Pause       exec pactl set-sink-volume $(pactl list sinks | grep Sink | cut -f 2 -d# | tail -n 1) +5%
 
 # Lock computer
 bindsym Control+$mod+l exec "~/scripts/lock.sh"

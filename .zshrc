@@ -52,3 +52,4 @@ export DISABLE_AUTO_TITLE=true
 #TERM="xterm-256color"
 
 source ~/scripts/local_init_erl_libs.sh
+alias sudo='sudo '

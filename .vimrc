@@ -98,7 +98,7 @@ endif " has("autocmd")
 " doesn't work without +X11
 " set clipboard=+unnamed
 
-set wildignore=*.o,*~,*.pyc,*.beam
+set wildignore=*.o,*~,*.pyc,*.beam,*.hi,*.dyn_hi,*.dyn_o,*.cache,*.p_hi,*.p_o,*.a
 
 " Set up colorscheme
 set t_Co=256
