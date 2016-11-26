@@ -20,7 +20,3 @@ if [ -d "$GHC_DOT_APP" ]; then
   export PATH="${PATH}:${HOME}/.cabal/bin:${GHC_DOT_APP}/Contents/bin"
 fi
 
-# start f.lux on linux
-xflux -l 51 -g 0 # approx London coordinates
-dropbox start
-
