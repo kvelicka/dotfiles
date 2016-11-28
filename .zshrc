@@ -51,5 +51,7 @@ export DISABLE_AUTO_TITLE=true
 
 #TERM="xterm-256color"
 
-source ~/scripts/local_init_erl_libs.sh
+source ~/local_init_erl_libs.sh
+
+# make aliases available in sudo
 alias sudo='sudo '

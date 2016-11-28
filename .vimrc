@@ -190,7 +190,7 @@ function! Indent_2_spaces()
 endfunction
 
 set expandtab autoindent shiftwidth=4 tabstop=4 softtabstop=4
-au FileType erlang call Indent_tabs_2s()
+au FileType erlang call Indent_tabs_4s()
 au FileType go call Indent_tabs_2s()
 au FileType haskell call Indent_2_spaces()
 au FileType html call Indent_2_spaces()
