@@ -45,7 +45,10 @@ plugins=(git wd tmuxinator)
 source $ZSH/oh-my-zsh.sh
 source ~/.aliases
 
-#setxkbmap -layout us -option ctrl:nocaps
+UNAMESTR="$(uname)"
+if [[ "$UNAMESTR" == "Linux" ]]; then
+    setxkbmap -layout us -option ctrl:nocaps
+fi
 
 export DISABLE_AUTO_TITLE=true
 
