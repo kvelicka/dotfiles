@@ -45,13 +45,16 @@ plugins=(git wd tmuxinator)
 source $ZSH/oh-my-zsh.sh
 source ~/.aliases
 
-setxkbmap -layout us -option ctrl:nocaps
+#setxkbmap -layout us -option ctrl:nocaps
 
 export DISABLE_AUTO_TITLE=true
 
 #TERM="xterm-256color"
 
-source ~/local_init_erl_libs.sh
+LOCAL_INIT_ERL_LIBS="$HOME/local_init_erl_libs.sh"
+if [ -f "$LOCAL_INIT_ERL_LIBS" ]; then
+    source $LOCAL_INIT_ERL_LIBS
+fi
 
 # make aliases available in sudo
 alias sudo='sudo '

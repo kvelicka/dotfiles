@@ -20,3 +20,4 @@ if [ -d "$GHC_DOT_APP" ]; then
   export PATH="${PATH}:${HOME}/.cabal/bin:${GHC_DOT_APP}/Contents/bin"
 fi
 
+export PATH=/Users/kvelicka/code/global-sandbox/.cabal-sandbox/bin:$PATH
