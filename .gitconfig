@@ -4,6 +4,8 @@
 [alias]
 	co = checkout
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	l = "!bash -c \"git log \"$@\" --all --graph --branches --decorate --abbrev-commit --date=short --pretty=format:'%C(yellow)%h%Creset%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset %C(blue)%G?%Creset'\""
+
 	s = status
 	d = difftool -y
 	cc = commit -a

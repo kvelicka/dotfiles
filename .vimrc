@@ -197,6 +197,7 @@ au FileType html call Indent_2_spaces()
 au FileType javascript call Indent_2_spaces()
 au FileType python call Indent_tabs_4s()
 au FileType ruby call Indent_2_spaces()
+au FileType sh call Indent_tabs_4s()
 
 """"""""""""""" PLUGIN STUFF """""""""""""
 
