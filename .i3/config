@@ -177,4 +177,4 @@ bindsym Pause       exec pactl set-sink-volume $(pactl list sinks | grep Sink | 
 
 # Lock computer
 bindsym Control+$mod+l exec "~/scripts/lock.sh"
-exec xautolock -time 5 -locker "~/scripts/lock.sh" &
+exec xautolock -time 9 -locker "~/scripts/lock.sh" &
