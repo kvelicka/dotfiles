@@ -21,3 +21,6 @@ if [ -d "$GHC_DOT_APP" ]; then
 fi
 
 export PATH=/Users/kvelicka/code/global-sandbox/.cabal-sandbox/bin:$PATH
+
+export GOROOT=$HOME/go
+export PATH=$PATH:$GOROOT/bin
