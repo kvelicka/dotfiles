@@ -10,7 +10,7 @@
 	d = difftool -y
 	cc = commit -a
 [core]
-	editor = vi
+	editor = nvim
 [filter "media"]
 	required = true
 	clean = git media clean %f
