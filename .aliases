@@ -7,7 +7,7 @@ alias nnn='nautilus .'
 # Ubuntu specific
 alias install='sudo apt-get install -y'
 alias update='sudo apt-get update'
-alias upgrade='sudo apt-get dist-upgrade'
+alias upgrade='sudo apt-get upgrade'
 alias remove='sudo apt-get remove'
 
 alias py3='python3'
