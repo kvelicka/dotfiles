@@ -31,3 +31,9 @@ alias tmux='tmux -2'
 alias redo='/home/user/code/docks/duma-redo.sh'
 alias runtest='/home/user/code/docks/duma-runtest.sh'
 alias dumatest='redo && runtest'
+
+# greps
+alias grep='grep  --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn} --exclude=tags -I'
+alias egrep='egrep  --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn} --exclude=tags -I'
+alias fgrep='fgrep  --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn} --exclude=tags -I'
+
