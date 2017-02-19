@@ -22,5 +22,11 @@ fi
 
 export PATH=/Users/kvelicka/code/global-sandbox/.cabal-sandbox/bin:$PATH
 
-export GOROOT=$HOME/go
-export PATH=$PATH:$GOROOT/bin
+UNAMESTR="$(uname)"
+if [[ "$UNAMESTR" == "Linux" ]]; then
+    export GOROOT="$HOME/go"
+    export PATH="$PATH":"$GOROOT/bin"
+fi
+
+export GOPATH="$HOME/code/go"
+export PATH="$PATH":"$GOPATH/bin"
