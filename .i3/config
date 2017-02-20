@@ -99,6 +99,9 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
+# start new windows with thin borders
+new_window pixel
+
 # move the currently focused window to the scratchpad
 bindsym $mod+Shift+minus move scratchpad
 
