@@ -142,7 +142,7 @@ set wildmode=longest,list,full
 set wildmenu
 
 " non-saved tabs can be hidden (i.e. non-visible)
-set hidden
+"set hidden
 
 " enable line numbers
 set nu
