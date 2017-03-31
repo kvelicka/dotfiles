@@ -146,7 +146,7 @@ set wildmenu
 
 " enable line numbers
 set nu
-set relativenumber
+"set relativenumber
 
 " show tabs etc, \w to toggle.
 set list listchars=tab:»\ ,trail:~,extends:>,precedes:< 
