@@ -158,6 +158,7 @@ au FileType tex set spl=en_gb spell
 " Set syntax highlighting for new file types
 au BufNewFile,BufRead *.md set filetype=markdown
 au BufNewFile,BufRead *.do set filetype=sh
+au BufNewFile,BufRead *.config set filetype=erlang
 
 function! Indent_tabs_4s()
     setl softtabstop=4
@@ -212,9 +213,9 @@ let g:ctrlp_map= '<c-p>'
 set statusline=%f\ %h%w%m%r\ 
 
 " Syntastic statusline
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
 " end of default statusline (with ruler)
 set statusline+=%=%(%l,%c%V\ %=\ %P%)
 

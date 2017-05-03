@@ -1,2 +1,12 @@
 # extract MCs for given market
 sort fulllog2 | cut -d' ' -f4- | sed -E 's/<<"//; s/">>$//; s/\\(.)/\1/g' | jq -c 'setpath(["mc"]; .mc|map(select(.id == "1.127114261")))'
+
+#make neovim indentaion great again
+git clone https://github.com/vim/vim
+cd vim
+git checkout 6be7f8733f34333ed75f6e39425d73a6b2644379 runtime/indent/erlang.vim
+sudo cp -f runtime/indent/erlang.vim /usr/share/nvim/runtime/indent/erlang.vim
+# for vim
+sudo cp -f runtime/indent/erlang.vim /usr/share/vim/addons/indent/erlang.vim
+# for vim 7.4
+sudo cp -f runtime/indent/erlang.vim /usr/share/vim/vim74/indent/erlang.vim
