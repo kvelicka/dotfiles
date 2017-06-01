@@ -62,3 +62,6 @@ fi
 
 # make aliases available in sudo
 alias sudo='sudo '
+
+# don't share history among different zsh terminals
+unsetopt share_history
