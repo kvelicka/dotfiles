@@ -30,8 +30,13 @@ alias et='emacsclient -t'
 alias ec='emacsclient -nc'
 
 # Git
+alias   g='git'
 alias  gp='git push'
 alias  gs='git status'
+alias  gd='git diff'
+alias  ga='git add'
+alias  gc='git commit -v'
+alias gca='git commit -v -a'
 alias gco='git checkout'
 alias gdd='git diff'
 alias gcp='git cherry-pick'
