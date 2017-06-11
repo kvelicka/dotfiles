@@ -66,3 +66,6 @@ alias sudo='sudo '
 # key repeat for either Windows or whatever windows terminal emulator I'm
 # using?
 KEYTIMEOUT=1
+
+# don't share history among different zsh terminals
+unsetopt share_history

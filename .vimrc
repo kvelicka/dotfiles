@@ -102,7 +102,7 @@ set wildignore=*.o,*~,*.pyc,*.beam,*.hi,*.dyn_hi,*.dyn_o,*.cache,*.p_hi,*.p_o,*.
 
 " Set up colorscheme
 set t_Co=256
-colorscheme solarized
+set background=dark " dark for solarized dark, light for the light one
 syntax on
 
 " Set extra options when running in GUI mode
@@ -114,16 +114,19 @@ if has("gui_running")
     set lines=45
     set columns=85
     set guifont="Input Mono:h11"
-    set background=dark " dark for solarized dark, light for the light one
-else
-    set background=dark " dark for solarized dark, light for the light one
 endif
 
+colorscheme solarized
+
 if has("unix")
-  let s:uname = system("uname -s")
-  if s:uname == "Darwin\n"
-    set background=light
-  endif
+    let s:uname = system("uname -s")
+    if s:uname == "Darwin\n"
+        if has("gui_vimr")
+            colorscheme dracula
+        endif
+    else
+        colorscheme solarized
+    endif
 endif
 
 " turning off physical line wrapping
@@ -158,6 +161,7 @@ au FileType tex set spl=en_gb spell
 " Set syntax highlighting for new file types
 au BufNewFile,BufRead *.md set filetype=markdown
 au BufNewFile,BufRead *.do set filetype=sh
+au BufNewFile,BufRead *.config set filetype=erlang
 
 function! Indent_tabs_4s()
     setl softtabstop=4
@@ -212,9 +216,9 @@ let g:ctrlp_map= '<c-p>'
 set statusline=%f\ %h%w%m%r\ 
 
 " Syntastic statusline
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
 " end of default statusline (with ruler)
 set statusline+=%=%(%l,%c%V\ %=\ %P%)
 

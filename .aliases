@@ -2,31 +2,46 @@ alias ll='ls -lh'
 alias l='ll'
 alias la='ls -lah'
 
+alias tmux='tmux -2'
 # TODO make cross-platform
 alias nnn='nautilus .'
-# Ubuntu specific
+
+# Ubuntu
 alias install='sudo apt install -y'
 alias update='sudo apt update'
 alias upgrade='sudo apt upgrade'
 alias remove='sudo apt remove'
 
+# Python
 alias py3='python3'
 alias pyserver='py3 -m SimpleHTTPServer'
 
+# Erlang
+alias r3='rebar3'
+
+# Vim
 alias vi='nvim'
 alias nv='nvim'
 alias vimrc='vi ~/.vimrc'
+
+# Emacs
 alias  e='emacsclient'
 alias et='emacsclient -t'
 alias ec='emacsclient -nc'
 
+# Git
+alias   g='git'
 alias  gp='git push'
+alias  gl='git pull'
 alias  gs='git status'
+alias  gd='git diff'
+alias  ga='git add'
+alias  gc='git commit -v'
+alias gca='git commit -v -a'
 alias gco='git checkout'
 alias gdd='git diff'
 alias gcp='git cherry-pick'
 
-alias tmux='tmux -2'
 # Work stuff
 alias redo='/home/user/code/docks/duma-redo.sh'
 alias runtest='/home/user/code/docks/duma-runtest.sh'
@@ -36,5 +51,5 @@ alias dumatest='redo && runtest'
 alias grep='grep  --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn} --exclude=tags -I'
 alias egrep='egrep  --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn} --exclude=tags -I'
 alias fgrep='fgrep  --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn} --exclude=tags -I'
-alias rgrep='rgrep  --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn} --exclude=tags -I'
+alias rgrep='rgrep  --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn} --exclude=tags -I -n'
 

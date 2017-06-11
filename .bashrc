@@ -69,7 +69,7 @@ unset color_prompt force_color_prompt
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
 xterm*|rxvt*)
-    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h[`stoppedjobs`]: \w\a\]$PS1"
+    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h[$(stoppedjobs)]: \w\a\]$PS1"
     ;;
 *)
     ;;
@@ -110,4 +110,12 @@ fi
 # sources /etc/bash.bashrc).
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
+fi
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
+if [ -f ~/dotfiles/.aliases ]; then
+	source "${HOME}/dotfiles/.aliases"
+else
+	echo "no .aliases in ~/dotfiles!"
 fi

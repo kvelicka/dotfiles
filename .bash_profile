@@ -10,7 +10,7 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
-#source $HOME/.bashrc
+source $HOME/.bashrc
 export PATH="/home/user/prefix/bin:$PATH"
 
 # use bashrc
