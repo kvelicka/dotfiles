@@ -30,3 +30,5 @@ fi
 
 export GOPATH="$HOME/code/go"
 export PATH="$PATH":"$GOPATH/bin"
+source "$HOME/.cargo/env"
+
