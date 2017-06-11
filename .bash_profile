@@ -13,3 +13,6 @@ fi
 #source $HOME/.bashrc
 export PATH="/home/user/prefix/bin:$PATH"
 
+# use bashrc
+if [ -f ~/.bashrc ]; then . ~/.bashrc; fi
+

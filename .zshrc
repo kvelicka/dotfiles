@@ -62,3 +62,7 @@ fi
 
 # make aliases available in sudo
 alias sudo='sudo '
+
+# key repeat for either Windows or whatever windows terminal emulator I'm
+# using?
+KEYTIMEOUT=1
