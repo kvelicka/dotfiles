@@ -11,8 +11,10 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 source $HOME/.bashrc
-export PATH="/home/user/prefix/bin:$PATH"
+export PATH="$HOME/prefix/bin:$PATH"
 
 # use bashrc
 if [ -f ~/.bashrc ]; then . ~/.bashrc; fi
 
+
+export PATH="$HOME/.cargo/bin:$PATH"
