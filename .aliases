@@ -41,6 +41,7 @@ alias gca='git commit -v -a'
 alias gco='git checkout'
 alias gdd='git diff'
 alias gcp='git cherry-pick'
+alias gcl='git clone --recursive'
 
 # Work stuff
 alias redo='/home/user/code/docks/duma-redo.sh'
