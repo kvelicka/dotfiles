@@ -185,3 +185,6 @@ exec xautolock -time 9 -locker "~/scripts/lock.sh" &
 # Move workspaces around
 bindsym Control+$mod+Left exec "i3-msg move workspace to output left"
 bindsym Control+$mod+Right exec "i3-msg move workspace to output right"
+
+# Network manager applet
+exec --no-startup-id nm-applet
