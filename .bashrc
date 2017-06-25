@@ -119,3 +119,8 @@ if [ -f ~/dotfiles/.aliases ]; then
 else
 	echo "no .aliases in ~/dotfiles!"
 fi
+
+UNAMESTR="$(uname)"
+if [[ "$UNAMESTR" == "Linux" ]]; then
+    setxkbmap -layout us -option ctrl:nocaps
+fi
