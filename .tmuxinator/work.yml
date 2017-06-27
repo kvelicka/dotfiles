@@ -27,19 +27,24 @@ root: ~/
     # Runs after everything. Use it to attach to tmux with custom options etc.
     # post: tmux -CC attach -t work
 
-    windows:
-        - logs:
-            panes:
-                -
-
-        - shell:
-          root: ~/code/duma
-          panes:
-              -
-        - thecode:
-          root: ~/code/docks
-          panes:
-              -
-        - db:
-          panes:
-              -
+windows:
+    - logs:
+        layout: main-vertical
+        panes:
+            - ssh sclogs.gambit
+            - ssh streams-recorder.gambit
+    - duma:
+        root: ~/code/duma
+        panes:
+            -
+    - thecode:
+        panes:
+            - ssh thecode.gambit
+    - mon:
+        layout: main-horizontal
+        panes:
+            - htop
+            - bmon
+    - db:
+        panes:
+            - ssh read-db.gambit
