@@ -185,3 +185,16 @@ exec xautolock -time 9 -locker "~/scripts/lock.sh" &
 # Move workspaces around
 bindsym Control+$mod+Left exec "i3-msg move workspace to output left"
 bindsym Control+$mod+Right exec "i3-msg move workspace to output right"
+
+set $bg-color            #CC0000
+set $bd-color            #AAAA00
+set $inactive-bg-color   #383C4A
+set $inactive-bd-color   #383C4A
+set $text-color          #f3f4f5
+set $inactive-text-color #676E7D
+#                           border          background              text                 indicator  child border
+client.focused              $bd-color       $bg-color               $text-color          $bd-color  $bd-color
+client.unfocused            $bg-color       $inactive-bg-color      $inactive-text-color $bg-color  $bg-color
+client.focused_inactive     $bg-color       $inactive-bg-color      $inactive-text-color $bg-color  $bg-color
+client.urgent               $bg-color       $inactive-bg-color      $text-color          $bg-color  $bg-color
+client.background                           $inactive-bg-color
