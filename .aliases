@@ -6,6 +6,8 @@ alias tmux='tmux -2'
 # TODO make cross-platform
 alias nnn='nautilus .'
 
+alias dc='docker-compose'
+
 # Ubuntu
 alias install='sudo apt install -y'
 alias update='sudo apt update'
@@ -53,4 +55,5 @@ alias grep='grep  --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn} --exclude=
 alias egrep='egrep  --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn} --exclude=tags -I'
 alias fgrep='fgrep  --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn} --exclude=tags -I'
 alias rgrep='rgrep  --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn} --exclude=tags -I -n'
-
+alias grepc='grep  --color=always --exclude-dir={.bzr,CVS,.git,.hg,.svn} --exclude=tags -I'
+alias rgrepc='rgrep  --color=always --exclude-dir={.bzr,CVS,.git,.hg,.svn} --exclude=tags -I -n'

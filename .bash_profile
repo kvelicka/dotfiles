@@ -16,5 +16,5 @@ export PATH="$HOME/prefix/bin:$PATH"
 # use bashrc
 if [ -f ~/.bashrc ]; then . ~/.bashrc; fi
 
-
 export PATH="$HOME/.cargo/bin:$PATH"
+. ~/.xinitrc
