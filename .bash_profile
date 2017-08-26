@@ -17,4 +17,8 @@ export PATH="$HOME/prefix/bin:$PATH"
 if [ -f ~/.bashrc ]; then . ~/.bashrc; fi
 
 export PATH="$HOME/.cargo/bin:$PATH"
-. ~/.xinitrc
+
+UNAMESTR="$(uname)"
+if [[ "$UNAMESTR" == "Linux" ]]; then
+    . ~/.xinitrc
+fi
