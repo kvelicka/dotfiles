@@ -6,8 +6,6 @@ alias tmux='tmux -2'
 # TODO make cross-platform
 alias nnn='nautilus .'
 
-alias dc='docker-compose'
-
 # Ubuntu
 alias install='sudo apt install -y'
 alias update='sudo apt update'
