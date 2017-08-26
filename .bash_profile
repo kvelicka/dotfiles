@@ -11,14 +11,17 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 source $HOME/.bashrc
-export PATH="$HOME/prefix/bin:$PATH"
 
 # use bashrc
 if [ -f ~/.bashrc ]; then . ~/.bashrc; fi
 
-export PATH="$HOME/.cargo/bin:$PATH"
 
 UNAMESTR="$(uname)"
 if [[ "$UNAMESTR" == "Linux" ]]; then
     . ~/.xinitrc
 fi
+
+# $PATH settings
+export PATH="$HOME/.rvm/bin:$PATH" # Add RVM to PATH for scripting
+export PATH="$HOME/prefix/bin:$PATH"
+export PATH="$HOME/.cargo/bin:$PATH"

@@ -112,11 +112,8 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-
 if [ -f ~/dotfiles/.aliases ]; then
 	source "${HOME}/dotfiles/.aliases"
 else
 	echo "no .aliases in ~/dotfiles!"
 fi
-
