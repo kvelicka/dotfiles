@@ -14,8 +14,3 @@ source $HOME/.bashrc
 
 # use bashrc
 if [ -f ~/.bashrc ]; then . ~/.bashrc; fi
-
-# $PATH settings
-export PATH="$HOME/.rvm/bin:$PATH" # Add RVM to PATH for scripting
-export PATH="$HOME/prefix/bin:$PATH"
-export PATH="$HOME/.cargo/bin:$PATH"
