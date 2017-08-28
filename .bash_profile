@@ -10,7 +10,8 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
-source $HOME/.bashrc
+# use .profile if it exists
+if [ -f "$HOME/.profile" ]; then . "$HOME/.profile"; fi
 
 # use bashrc
 if [ -f ~/.bashrc ]; then . ~/.bashrc; fi
