@@ -1,3 +1,7 @@
+# If not running without a display, don't do anything
+[ -z "$DISPLAY" ] && return
+
+
 # set US keyboard and ctrl instead of caps lock
 setxkbmap -layout us -option ctrl:nocaps
 
