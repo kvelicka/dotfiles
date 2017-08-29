@@ -170,6 +170,13 @@ function! Indent_tabs_4s()
     setl noexpandtab
 endfunction
 
+function! Indent_tabs_8s()
+    setl softtabstop=8
+    setl shiftwidth=8
+    setl tabstop=8
+    setl noexpandtab
+endfunction
+
 function! Indent_tabs_2s()
     setl softtabstop=2
     setl shiftwidth=2
