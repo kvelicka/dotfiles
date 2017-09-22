@@ -4,7 +4,7 @@ alias la='ls -lah'
 
 alias tmux='tmux -2'
 # TODO make cross-platform
-alias nnn='nautilus .'
+alias nnn='nautilus . --no-desktop'
 
 # Ubuntu
 alias install='sudo apt install -y'
