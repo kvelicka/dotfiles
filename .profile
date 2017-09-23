@@ -25,3 +25,5 @@ export PATH="$HOME/prefix/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 
 export PATH="$HOME/.cabal/bin:/opt/cabal/1.24/bin:/opt/ghc/8.2.1/bin:$PATH"
+
+export EDITOR="vi"

@@ -1,7 +1,7 @@
 #!/bin/sh -e
 
 # don't leak old i3lock processes
-killall i3lock
+killall i3lock 2> /dev/null || true
 
 # Take a screenshot
 scrot /tmp/screen_locked.png
