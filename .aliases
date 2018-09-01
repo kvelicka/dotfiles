@@ -42,6 +42,8 @@ alias gco='git checkout'
 alias gdd='git diff'
 alias gcp='git cherry-pick'
 alias gcl='git clone --recursive'
+alias grb='git rebase'
+alias grbmh='git rebase -i $(git merge-base HEAD origin/master)'
 
 # greps
 alias grep='grep  --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn} --exclude=tags -I'

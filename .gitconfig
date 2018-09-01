@@ -4,7 +4,10 @@
 [alias]
 	co = checkout
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+    lp = log -p --color --abbrev-commit
 	l = "!bash -c \"git log \"$@\" --all --graph --branches --decorate --abbrev-commit --date=short --pretty=format:'%C(yellow)%h%Creset%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset %C(blue)%G?%Creset'\""
+	lpb = "!bash -c \"git log -p $(git merge-base HEAD origin/master)..\""
+	lpbr = "!bash -c \"git log -p $(git merge-base HEAD origin/master).. --reverse\""
 
 	s = status
 	d = difftool -y
@@ -36,4 +39,7 @@
 [url "git@github.com:/ghc/packages-"]
 	insteadOf = git@github.com:/ghc/packages/
 [push]
-	default = simple
+	default = current
+[merge]
+	conflictStyle = diff3
+
