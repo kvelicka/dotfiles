@@ -102,8 +102,12 @@ set wildignore=*.o,*~,*.pyc,*.beam,*.hi,*.dyn_hi,*.dyn_o,*.cache,*.p_hi,*.p_o,*.
 
 " Set up colorscheme
 set t_Co=256
+"set background=light " dark for solarized dark, light for the light one
 set background=dark " dark for solarized dark, light for the light one
 syntax on
+
+"colorscheme default
+colorscheme solarized
 
 " Set extra options when running in GUI mode
 if has("gui_running")
@@ -116,16 +120,12 @@ if has("gui_running")
     set guifont="Input Mono:h11"
 endif
 
-colorscheme solarized
-
 if has("unix")
     let s:uname = system("uname -s")
     if s:uname == "Darwin\n"
         if has("gui_vimr")
             colorscheme dracula
         endif
-    else
-        colorscheme solarized
     endif
 endif
 
@@ -150,6 +150,9 @@ set wildmenu
 " enable line numbers
 set nu
 "set relativenumber
+
+" always keep at least 10 lines visible
+set scrolloff=5
 
 " show tabs etc, \w to toggle.
 set list listchars=tab:»\ ,trail:~,extends:>,precedes:< 
@@ -202,12 +205,12 @@ function! Indent_2_spaces()
 endfunction
 
 set expandtab autoindent shiftwidth=4 tabstop=4 softtabstop=4
-au FileType erlang call Indent_tabs_4s()
+au FileType erlang call Indent_tabs_8s()
 au FileType go call Indent_tabs_4s()
 au FileType haskell call Indent_2_spaces()
 au FileType html call Indent_2_spaces()
 au FileType javascript call Indent_2_spaces()
-au FileType python call Indent_tabs_4s()
+au FileType python call Indent_tabs_8s()
 au FileType ruby call Indent_2_spaces()
 au FileType sh call Indent_tabs_4s()
 
@@ -221,6 +224,7 @@ let g:ctrlp_map= '<c-p>'
 
 " start of default statusline
 set statusline=%f\ %h%w%m%r\ 
+set cursorline
 
 " Syntastic statusline
 "set statusline+=%#warningmsg#
