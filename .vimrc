@@ -107,6 +107,7 @@ set background=dark " dark for solarized dark, light for the light one
 syntax on
 
 "colorscheme default
+"set background=light " dark for solarized dark, light for the light one
 colorscheme solarized
 
 " Set extra options when running in GUI mode
@@ -205,6 +206,9 @@ function! Indent_2_spaces()
 endfunction
 
 set expandtab autoindent shiftwidth=4 tabstop=4 softtabstop=4
+au FileType c call Indent_4_spaces()
+au FileType cpp call Indent_4_spaces()
+au FileType hpp call Indent_4_spaces()
 au FileType erlang call Indent_tabs_8s()
 au FileType go call Indent_tabs_4s()
 au FileType haskell call Indent_2_spaces()
@@ -244,3 +248,19 @@ let g:syntastic_disabled_filetypes = ['sass']
 if has('nvim')
     tnoremap <C-[> <C-\><C-n>
 endif
+
+" https://github.com/numirias/security/blob/master/doc/2019-06-04_ace-vim-neovim.md
+set nomodeline
+
+" for LanguageClient-neovim setup
+set runtimepath+=~/.vim-plugins/LanguageClient-neovim
+
+" LanguageClient-neovim
+nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
+nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
+
+let g:LanguageClient_serverCommands = {
+      \ 'c': ['/home/user/code/ccls/Release/ccls'],
+      \ 'cpp': ['/home/user/code/ccls/Release/ccls']
+      \ }
+      "\ 'erlang': ['/home/user/code/sourcer/_build/default/bin/erlang_ls'],
