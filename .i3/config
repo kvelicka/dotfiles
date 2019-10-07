@@ -188,15 +188,25 @@ bindsym Control+$mod+Right exec "i3-msg move workspace to output right"
 
 # Network manager applet
 exec --no-startup-id nm-applet
-set $bg-color            #CC0000
-set $bd-color            #AAAA00
-set $inactive-bg-color   #383C4A
-set $inactive-bd-color   #383C4A
-set $text-color          #f3f4f5
-set $inactive-text-color #676E7D
-#                           border          background              text                 indicator  child border
-client.focused              $bd-color       $bg-color               $text-color          $bd-color  $bd-color
-client.unfocused            $bg-color       $inactive-bg-color      $inactive-text-color $bg-color  $bg-color
-client.focused_inactive     $bg-color       $inactive-bg-color      $inactive-text-color $bg-color  $bg-color
-client.urgent               $bg-color       $inactive-bg-color      $text-color          $bg-color  $bg-color
-client.background                           $inactive-bg-color
+
+#set $bg-color            #CC0000
+#set $bd-color            #AAAA00
+#set $inactive-bg-color   #383C4A
+#set $inactive-bd-color   #383C4A
+#set $text-color          #f3f4f5
+#set $inactive-text-color #676E7D
+####                           border          background              text                 indicator  child border
+#client.focused              $bd-color       $bg-color               $text-color          $bd-color  $bd-color
+#client.unfocused            $bg-color       $inactive-bg-color      $inactive-text-color $bg-color  $bg-color
+#client.focused_inactive     $bg-color       $inactive-bg-color      $inactive-text-color $bg-color  $bg-color
+#client.urgent               $bg-color       $inactive-bg-color      $text-color          $bg-color  $bg-color
+#client.background                           $inactive-bg-color
+
+# class                 border  bground text    indicator child_border
+client.focused          #4C7899 #285577 #FFFFFF #E167F4   #FF0000
+client.focused_inactive #333333 #5F676A #FFFFFF #484E50   #5F676A
+client.unfocused        #333333 #222222 #888888 #292D2E   #222222
+client.urgent           #2F343A #900000 #FFFFFF #900000   #900000
+client.placeholder      #000000 #0C0C0C #FFFFFF #000000   #0C0C0C
+
+client.background       #FFFFFF
