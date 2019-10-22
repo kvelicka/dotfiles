@@ -1,7 +1,3 @@
-# If not running without a display, don't do anything
-[ -z "$DISPLAY" ] && return
-
-
 # set US keyboard and ctrl instead of caps lock
 setxkbmap -layout us -option ctrl:nocaps
 
@@ -10,3 +6,8 @@ xset r rate 220 34
 
 # turn screen black/off in ~10min?
 xset dpms 600 630
+
+# set up home pc layout
+if [ "$(hostname)" == "karl-P5Q-PRO" ]; then
+	source "/home/karl/.screenlayout/samsung-samsung.sh"
+fi
