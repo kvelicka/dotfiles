@@ -104,6 +104,8 @@ set wildignore=*.o,*~,*.pyc,*.beam,*.hi,*.dyn_hi,*.dyn_o,*.cache,*.p_hi,*.p_o,*.
 set t_Co=256
 set background=dark " dark for solarized dark, light for the light one
 syntax on
+colorscheme solarized
+
 
 " Set extra options when running in GUI mode
 if has("gui_running")
@@ -116,16 +118,12 @@ if has("gui_running")
     set guifont="Input Mono:h11"
 endif
 
-colorscheme solarized
-
 if has("unix")
     let s:uname = system("uname -s")
     if s:uname == "Darwin\n"
         if has("gui_vimr")
             colorscheme dracula
         endif
-    else
-        colorscheme solarized
     endif
 endif
 
