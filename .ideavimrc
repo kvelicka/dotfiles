@@ -1,0 +1,14 @@
+set ignorecase
+set smartcase
+set incsearch
+
+set hlsearch
+nmap \q :nohlsearch<CR>
+
+set matchpairs=(:),{:},[:],<:>
+
+set scrolloff=3
+
+set showmode
+
+imap jj <Esc>
