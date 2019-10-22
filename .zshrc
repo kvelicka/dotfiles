@@ -67,5 +67,8 @@ alias sudo='sudo '
 # using?
 KEYTIMEOUT=1
 
+SAVEHIST=1000000
+HISTSIZE=1000000
+
 # don't share history among different zsh terminals
 unsetopt share_history
