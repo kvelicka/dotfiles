@@ -39,6 +39,10 @@ cmap w!! %!sudo tee > /dev/null %
 :cnoremap <Esc>d <S-Right><Delete>
 :cnoremap <C-g> <C-c>
 
+" Disable annoying shortcuts
+inoremap <S-Up> <Nop>
+inoremap <S-Down> <Nop>
+
 " Emacs style highlight-as-you-type search
 :set incsearch
 " Only match case when capital letters are used
@@ -108,7 +112,6 @@ syntax on
 colorscheme solarized
 
 
-"colorscheme default
 "set background=light " dark for solarized dark, light for the light one
 colorscheme solarized
 
@@ -168,6 +171,8 @@ au FileType tex set spl=en_gb spell
 au BufNewFile,BufRead *.md set filetype=markdown
 au BufNewFile,BufRead *.do set filetype=sh
 au BufNewFile,BufRead *.config set filetype=erlang
+au BufNewFile,BufRead *.app set filetype=erlang
+au BufNewFile,BufRead *.app.src set filetype=erlang
 
 function! Indent_tabs_4s()
     setl softtabstop=4
@@ -255,14 +260,14 @@ endif
 set nomodeline
 
 " for LanguageClient-neovim setup
-set runtimepath+=~/.vim-plugins/LanguageClient-neovim
+"set runtimepath+=~/.vim-plugins/LanguageClient-neovim
 
 " LanguageClient-neovim
-nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
-nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
+"nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
+"nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
 
-let g:LanguageClient_serverCommands = {
-      \ 'c': ['/home/user/code/ccls/Release/ccls'],
-      \ 'cpp': ['/home/user/code/ccls/Release/ccls']
-      \ }
+"let g:LanguageClient_serverCommands = {
+      "\ 'c': ['/home/user/code/ccls/Release/ccls'],
+      "\ 'cpp': ['/home/user/code/ccls/Release/ccls']
+      "\ }
       "\ 'erlang': ['/home/user/code/sourcer/_build/default/bin/erlang_ls'],
