@@ -37,7 +37,7 @@ set $mod Mod4
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec gnome-terminal
+bindsym $mod+Return exec atty
 
 # kill focused window
 bindsym $mod+Shift+q kill
