@@ -25,6 +25,8 @@ imap jj <Esc>
 
 " sudo save!
 cmap w!! %!sudo tee > /dev/null %
+cmap qw wq
+cmap Wq wq
 
 " Add emacs-like bindings for the command line
 :cnoremap <C-a> <Home>
@@ -252,6 +254,7 @@ let g:syntastic_disabled_filetypes = ['sass']
 
 
 """"""""""""""" NEOVIM STUFF """""""""""""
+" make esc work for terminal
 if has('nvim')
     tnoremap <C-[> <C-\><C-n>
 endif
