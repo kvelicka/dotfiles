@@ -235,6 +235,10 @@ call togglebg#map("<F4>")
 " enable ctrlp.vim
 let g:ctrlp_map= '<c-p>'
 
+" might be needed to make erlang tag jumping work properly
+"autocmd FileType erlang setlocal iskeyword+=:
+
+
 " start of default statusline
 set statusline=%f\ %h%w%m%r\ 
 set cursorline
