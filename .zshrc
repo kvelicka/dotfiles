@@ -72,3 +72,6 @@ HISTSIZE=1000000
 
 # don't share history among different zsh terminals
 unsetopt share_history
+
+# Only allow unique entries in the PATH variable
+typeset -U path
