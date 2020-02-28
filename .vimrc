@@ -108,14 +108,10 @@ set wildignore=*.o,*~,*.pyc,*.beam,*.hi,*.dyn_hi,*.dyn_o,*.cache,*.p_hi,*.p_o,*.
 
 " Set up colorscheme
 set t_Co=256
-"set background=light " dark for solarized dark, light for the light one
-set background=dark " dark for solarized dark, light for the light one
+set background=light " dark for solarized dark, light for the light one
 syntax on
-colorscheme solarized
+colorscheme default
 
-
-"set background=light " dark for solarized dark, light for the light one
-colorscheme solarized
 
 " Set extra options when running in GUI mode
 if has("gui_running")
