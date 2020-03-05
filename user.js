@@ -9,7 +9,7 @@ user_pref("services.sync.addons.ignoreUserEnabledChanges", true);
 user_pref("extensions.pocket.enabled", false);
 
 // double click only selects the word from an URL, not the whole thing
-user_pref("browser.urlbar.doubleClickSelectsAll", true);
+user_pref("browser.urlbar.doubleClickSelectsAll", false);
 
 // don't warn about accessing about:config
 user_pref("browser.aboutConfig.showWarning", false);
