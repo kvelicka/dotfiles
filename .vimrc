@@ -110,7 +110,6 @@ set wildignore=*.o,*~,*.pyc,*.beam,*.hi,*.dyn_hi,*.dyn_o,*.cache,*.p_hi,*.p_o,*.
 set t_Co=256
 set background=light " dark for solarized dark, light for the light one
 syntax on
-colorscheme default
 
 
 " Set extra options when running in GUI mode
