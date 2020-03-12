@@ -16,6 +16,7 @@
 	cc = commit -a
 [core]
 	editor = nvim
+    #pager = delta --dark
 [filter "media"]
 	required = true
 	clean = git media clean %f

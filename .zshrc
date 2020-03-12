@@ -46,8 +46,9 @@ plugins=(git wd tmuxinator)
 source $ZSH/oh-my-zsh.sh
 source ~/.aliases
 
-UNAMESTR="$(uname)"
-if [[ "$UNAMESTR" == "Linux" ]]; then
+UNAMESTR="$(uname -a)"
+if [[ "$UNAMESTR" == Linux* ]] && [[ -n "$DISPLAY" ]]; then
+    # Don't set this on WSL as there's no X
     setxkbmap -layout us -option ctrl:nocaps
 fi
 

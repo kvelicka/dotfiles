@@ -25,6 +25,8 @@ imap jj <Esc>
 
 " sudo save!
 cmap w!! %!sudo tee > /dev/null %
+cmap qw wq
+cmap Wq wq
 
 " Add emacs-like bindings for the command line
 :cnoremap <C-a> <Home>
@@ -106,14 +108,9 @@ set wildignore=*.o,*~,*.pyc,*.beam,*.hi,*.dyn_hi,*.dyn_o,*.cache,*.p_hi,*.p_o,*.
 
 " Set up colorscheme
 set t_Co=256
-"set background=light " dark for solarized dark, light for the light one
-set background=dark " dark for solarized dark, light for the light one
+"set background=dark " dark for solarized dark, light for the light one
 syntax on
-colorscheme solarized
 
-
-"set background=light " dark for solarized dark, light for the light one
-colorscheme solarized
 
 " Set extra options when running in GUI mode
 if has("gui_running")
@@ -233,6 +230,10 @@ call togglebg#map("<F4>")
 " enable ctrlp.vim
 let g:ctrlp_map= '<c-p>'
 
+" might be needed to make erlang tag jumping work properly
+"autocmd FileType erlang setlocal iskeyword+=:
+
+
 " start of default statusline
 set statusline=%f\ %h%w%m%r\ 
 set cursorline
@@ -252,6 +253,7 @@ let g:syntastic_disabled_filetypes = ['sass']
 
 
 """"""""""""""" NEOVIM STUFF """""""""""""
+" make esc work for terminal
 if has('nvim')
     tnoremap <C-[> <C-\><C-n>
 endif
