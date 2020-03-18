@@ -175,8 +175,8 @@ bar {
 
 # Volume controls
 bindsym Print exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause
-bindsym Scroll_Lock exec pactl set-sink-volume $(pactl list sinks | grep Sink | cut -f 2 -d# | tail -n 1) -5%
-bindsym Pause       exec pactl set-sink-volume $(pactl list sinks | grep Sink | cut -f 2 -d# | tail -n 1) +5%
+bindsym Scroll_Lock exec pactl set-sink-volume $(pactl info | sed -En 's/Default Sink: (.*)/\1/p') -5%
+bindsym Pause       exec pactl set-sink-volume $(pactl info | sed -En 's/Default Sink: (.*)/\1/p') +5%
 
 # Lock computer
 bindsym Control+$mod+l exec "~/scripts/lock.sh"
