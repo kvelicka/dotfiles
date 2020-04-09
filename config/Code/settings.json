@@ -1,0 +1,39 @@
+{
+
+    // Stored in $HOME/.config/Code/User/settings.json
+    "editor.tabSize": 8,
+    "editor.fontFamily": "'Iosevka Term Medium'",
+    "editor.renderWhitespace": "boundary",
+    "editor.cursorStyle": "block",
+    "editor.fontSize": 15,
+    "workbench.colorTheme": "Solarized Dark",
+    "editor.minimap.enabled": false,
+    "editor.renderControlCharacters": false,
+    "telemetry.enableTelemetry": false,
+    "telemetry.enableCrashReporter": false,
+    "erlang.codeLensEnabled": true,
+    // Vim mode stuff
+    "vim.insertModeKeyBindings": [
+        {
+            "before": ["j", "j"],
+            "after": ["<Esc>"]
+        }
+    ],
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": ["j", "j"],
+            "after": ["<Esc>"]
+        }
+    ],
+    "vim.useCtrlKeys": true,
+    "vim.hlsearch": false,
+    "workbench.list.openMode": "doubleClick",
+    "workbench.editor.enablePreviewFromQuickOpen": false,
+    "window.zoomLevel": 0,
+    "C_Cpp.default.cppStandard": "c++17",
+    "C_Cpp.default.intelliSenseMode": "gcc-x64",
+    "editor.cursorSurroundingLines": 3,
+    "editor.autoClosingBrackets": "never",
+    "editor.autoClosingQuotes": "never"
+    //"ccls.launch.command": "/home/user/code/ccls/Release/ccls"
+}
