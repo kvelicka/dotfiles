@@ -1,3 +1,4 @@
+" lives at ~/.ideavimrc
 set ignorecase
 set smartcase
 set incsearch

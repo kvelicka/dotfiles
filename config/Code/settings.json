@@ -2,16 +2,13 @@
 
     // Stored in $HOME/.config/Code/User/settings.json
     "editor.tabSize": 8,
-    "editor.fontFamily": "'Iosevka Term Medium'",
+    "editor.fontFamily": "Input Mono, Medium",
     "editor.renderWhitespace": "boundary",
     "editor.cursorStyle": "block",
-    "editor.fontSize": 15,
-    "workbench.colorTheme": "Solarized Dark",
     "editor.minimap.enabled": false,
     "editor.renderControlCharacters": false,
     "telemetry.enableTelemetry": false,
     "telemetry.enableCrashReporter": false,
-    "erlang.codeLensEnabled": true,
     // Vim mode stuff
     "vim.insertModeKeyBindings": [
         {
@@ -25,6 +22,11 @@
             "after": ["<Esc>"]
         }
     ],
+    // ctrl-p in a terminal should use the readline binding
+    // (i.e. "up"/previous line), not VSCode's "open recent"
+    "terminal.integrated.commandsToSkipShell": [
+        "-workbench.action.quickOpen"
+    ],
     "vim.useCtrlKeys": true,
     "vim.hlsearch": false,
     "workbench.list.openMode": "doubleClick",
@@ -34,6 +36,8 @@
     "C_Cpp.default.intelliSenseMode": "gcc-x64",
     "editor.cursorSurroundingLines": 3,
     "editor.autoClosingBrackets": "never",
-    "editor.autoClosingQuotes": "never"
+    "editor.autoClosingQuotes": "never",
+    "files.autoSave": "afterDelay",
+    "erlang_ls.logLevel": "info"
     //"ccls.launch.command": "/home/user/code/ccls/Release/ccls"
 }
