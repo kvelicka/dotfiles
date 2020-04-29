@@ -1,8 +1,7 @@
 {
-
     // Stored in $HOME/.config/Code/User/settings.json
-    "editor.tabSize": 8,
-    "editor.fontFamily": "Input Mono, Medium",
+
+    "editor.fontFamily": "InputMono Medium",
     "editor.renderWhitespace": "boundary",
     "editor.cursorStyle": "block",
     "editor.minimap.enabled": false,
@@ -10,6 +9,7 @@
     "telemetry.enableTelemetry": false,
     "telemetry.enableCrashReporter": false,
     // Vim mode stuff
+    "vim.leader": "\\",
     "vim.insertModeKeyBindings": [
         {
             "before": ["j", "j"],
@@ -20,6 +20,19 @@
         {
             "before": ["j", "j"],
             "after": ["<Esc>"]
+        },
+        {
+            "before": ["j"],
+            "after": ["g", "j"]
+        },
+        {
+            "before": ["k"],
+            "after": ["g", "k"]
+        },
+        {
+            "before": ["<leader>", "q"],
+            "commands": [":nohl"],
+            "after": []
         }
     ],
     // ctrl-p in a terminal should use the readline binding
@@ -28,7 +41,7 @@
         "-workbench.action.quickOpen"
     ],
     "vim.useCtrlKeys": true,
-    "vim.hlsearch": false,
+    "vim.hlsearch": true,
     "workbench.list.openMode": "doubleClick",
     "workbench.editor.enablePreviewFromQuickOpen": false,
     "window.zoomLevel": 0,
@@ -38,6 +51,11 @@
     "editor.autoClosingBrackets": "never",
     "editor.autoClosingQuotes": "never",
     "files.autoSave": "afterDelay",
-    "erlang_ls.logLevel": "info"
+    "erlang_ls.logLevel": "info",
+    "python.jediEnabled": false,
+    "editor.fontSize": 13,
+    "editor.wordWrap": "on",
+    "workbench.colorTheme": "Default Light+",
+    "editor.copyWithSyntaxHighlighting": false
     //"ccls.launch.command": "/home/user/code/ccls/Release/ccls"
 }
