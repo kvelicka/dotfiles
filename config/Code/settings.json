@@ -31,9 +31,13 @@
         },
         {
             "before": ["<leader>", "q"],
-            "commands": [":nohl"],
-            "after": []
+            "commands": [":nohl"]
+        },
+        {
+            "before": ["g", "d"],
+            "commands": ["editor.action.peekDefinition"]
         }
+
     ],
     // ctrl-p in a terminal should use the readline binding
     // (i.e. "up"/previous line), not VSCode's "open recent"
@@ -56,6 +60,6 @@
     "editor.fontSize": 13,
     "editor.wordWrap": "on",
     "workbench.colorTheme": "Default Light+",
-    "editor.copyWithSyntaxHighlighting": false
-    //"ccls.launch.command": "/home/user/code/ccls/Release/ccls"
+    "editor.copyWithSyntaxHighlighting": false,
+    "gitlens.statusBar.enabled": false
 }
