@@ -1,0 +1,7 @@
+/* should be located in ~/.mozilla/firefox/$USER_PROFILE/chrome/userChrome.css
+ */
+
+/* Completely hide the "title changed" notification dot on pinned tabs */
+  .tabbrowser-tab > .tab-stack > .tab-content[pinned][titlechanged]:not([selected="true"]) {
+    background-image: none !important;
+}

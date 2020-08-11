@@ -13,3 +13,6 @@ user_pref("browser.urlbar.doubleClickSelectsAll", false);
 
 // don't warn about accessing about:config
 user_pref("browser.aboutConfig.showWarning", false);
+
+// do look at chrome/userChrome.css
+user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
