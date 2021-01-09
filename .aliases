@@ -1,6 +1,6 @@
-alias ll='ls -lh'
+alias ll='exa -lh'
 alias l='ll'
-alias la='ls -lah'
+alias la='exa -lah'
 
 alias tmux='tmux -2'
 # TODO make cross-platform
