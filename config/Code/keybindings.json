@@ -32,5 +32,13 @@
         {
             "key": "ctrl+w j",
             "command": "workbench.action.navigateDown"
+        },
+        {
+            "key": "ctrl+w s",
+            "command": "workbench.action.splitEditorDown"
+        }
+        {
+            "key": "ctrl+w v",
+            "command": "workbench.action.splitEditorRight"
         }
 ]

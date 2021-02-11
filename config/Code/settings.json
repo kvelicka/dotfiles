@@ -18,10 +18,6 @@
     ],
     "vim.normalModeKeyBindingsNonRecursive": [
         {
-            "before": ["j", "j"],
-            "after": ["<Esc>"]
-        },
-        {
             "before": ["j"],
             "after": ["g", "j"]
         },
@@ -46,6 +42,7 @@
     ],
     "vim.useCtrlKeys": true,
     "vim.hlsearch": true,
+    "vim.cursorStylePerMode.insert": "line",
     "workbench.list.openMode": "doubleClick",
     "workbench.editor.enablePreviewFromQuickOpen": false,
     "window.zoomLevel": 0,
@@ -56,10 +53,24 @@
     "editor.autoClosingQuotes": "never",
     "files.autoSave": "afterDelay",
     "erlang_ls.logLevel": "info",
-    "python.jediEnabled": false,
     "editor.fontSize": 13,
-    "editor.wordWrap": "on",
-    "workbench.colorTheme": "Default Light+",
     "editor.copyWithSyntaxHighlighting": false,
-    "gitlens.statusBar.enabled": false
+    "gitlens.statusBar.enabled": false,
+    "editor.wordWrap": "on",
+    "extensions.ignoreRecommendations": false,
+    "plantuml.commandArgs": [
+    
+    ],
+    "plantuml.server": "plantuml.gambit:80",
+    "plantuml.render": "PlantUMLServer",
+    "latex-workshop.view.pdf.viewer": "tab",
+    "rust-analyzer.callInfo.full": false,
+    "python.showStartPage": false,
+    "workbench.colorTheme": "Gruvbox Dark Medium",
+    "remote.autoForwardPorts": false,
+    "python.languageServer": "Pylance",
+    "rust-analyzer.diagnostics.enableExperimental": false,
+    "rust-analyzer.cargo.loadOutDirsFromCheck": true,
+    "rust-analyzer.procMacro.enable": true
+
 }
