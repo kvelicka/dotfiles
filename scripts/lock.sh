@@ -4,7 +4,7 @@
 #killall i3lock 2> /dev/null || true
 
 # Take a screenshot
-scrot /tmp/screen_locked.png
+scrot --overwrite /tmp/screen_locked.png
 
 # Pixellate it 10x
 mogrify -scale 10% -scale 1000% /tmp/screen_locked.png
