@@ -22,8 +22,8 @@ PATH="$HOME/bin:$HOME/.local/bin:$PATH"
 # $PATH settings
 export PATH="$HOME/.rvm/bin:$PATH" # Add RVM to PATH for scripting
 export PATH="$HOME/prefix/bin:$PATH"
-export PATH="$HOME/.cargo/bin:$PATH"
 
 export PATH="$HOME/.cabal/bin:/opt/cabal/1.24/bin:/opt/ghc/8.2.1/bin:$PATH"
 
 export EDITOR="vi"
+source "$HOME/.cargo/env"

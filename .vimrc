@@ -184,6 +184,7 @@ au FileType tex set spl=en_gb spell
 au BufNewFile,BufRead *.md set filetype=markdown
 au BufNewFile,BufRead *.do set filetype=sh
 au BufNewFile,BufRead *.config set filetype=erlang
+au BufNewFile,BufRead *.escript set filetype=erlang
 au BufNewFile,BufRead *.app set filetype=erlang
 au BufNewFile,BufRead *.app.src set filetype=erlang
 

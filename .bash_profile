@@ -15,3 +15,4 @@ if [ -f "$HOME/.profile" ]; then . "$HOME/.profile"; fi
 
 # use bashrc
 if [ -f ~/.bashrc ]; then . ~/.bashrc; fi
+source "$HOME/.cargo/env"
