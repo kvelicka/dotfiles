@@ -2,14 +2,21 @@
 	name = Karl Velicka
 	email = karolis.velicka@gmail.com
 [alias]
-	co = checkout
-	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+    co = checkout
+    # one-line commit summaries with graph view
+    lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+    # similar to above but with full commit messages? I don't really use this one tbh
     lgm = log --graph --date=relative --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset%n%w(0,4,4)%-b%n%n%-N' 
+    # "git log patch" - commit history with full messages and diffs (aka patches)
     lp = log -p --color --abbrev-commit
+    # list local branches in reverse chrono order
     br = for-each-ref --sort=committerdate refs/heads/ --format='%(committerdate:short) %(refname:short)'
-	l = "!bash -c \"git log \"$@\" --all --graph --branches --decorate --abbrev-commit --date=short --pretty=format:'%C(yellow)%h%Creset%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset %C(blue)%G?%Creset'\""
-	lpb = "!bash -c \"git log -p $(git merge-base HEAD origin/master)..\""
-	lpbr = "!bash -c \"git log -p $(git merge-base HEAD origin/master).. --reverse\""
+    # unused by me
+    l = "!bash -c \"git log \"$@\" --all --graph --branches --decorate --abbrev-commit --date=short --pretty=format:'%C(yellow)%h%Creset%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset %C(blue)%G?%Creset'\""
+    # "git log patch branch" - same as `lp` but only shows commits between HEAD and origin/master
+    lpb = "!bash -c \"git log -p $(git merge-base HEAD origin/master)..\""
+    # "git log patch branch reversed" - same as `lpp` but reverse order
+    lpbr = "!bash -c \"git log -p $(git merge-base HEAD origin/master).. --reverse\""
 
 	s = status
 	d = difftool -y
@@ -46,3 +53,7 @@
 [merge]
 	conflictStyle = diff3
 
+[pull]
+	ff = only
+[init]
+	defaultBranch = main
