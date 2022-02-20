@@ -101,14 +101,31 @@ endif " has("autocmd")
 " doesn't work without +X11
 " set clipboard=+unnamed
 
-set wildignore=*.o,*~,*.pyc,*.beam,*.hi,*.dyn_hi,*.dyn_o,*.cache,*.p_hi,*.p_o,*.a
+set wildignore=*.o,*~,*.pyc,*.beam,*.hi,*.dyn_hi,*.dyn_o,*.cache,*.p_hi,*.p_o,*.a,.mypy_cache
 
 " Set up colorscheme
-set t_Co=256
-"set background=dark " dark for solarized dark, light for the light one
-syntax on
+" set t_Co=256
 
-set background=light
+"Use 24-bit (true-color) mode in Vim/Neovim when outside tmux.
+"If you're using tmux version 2.2 or later, you can remove the outermost $TMUX check and use tmux's 24-bit color support
+"(see < http://sunaku.github.io/tmux-24bit-color.html#usage > for more information.)
+if (empty($TMUX))
+  if (has("nvim"))
+    "For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
+    let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+  endif
+  "For Neovim > 0.1.5 and Vim > patch 7.4.1799 < https://github.com/vim/vim/commit/61be73bb0f965a895bfb064ea3e55476ac175162 >
+  "Based on Vim patch 7.4.1770 (`guicolors` option) < https://github.com/vim/vim/commit/8a633e3427b47286869aa4b96f2bfc1fe65b25cd >
+  " < https://github.com/neovim/neovim/wiki/Following-HEAD#20160511 >
+  if (has("termguicolors"))
+    set termguicolors
+  endif
+endif
+
+let g:gruvbox_contrast_dark = 'medium'
+set background=dark
+colorscheme gruvbox
+syntax on
 
 
 " Set extra options when running in GUI mode
@@ -224,9 +241,6 @@ au FileType sh call Indent_tabs_4s()
 autocmd FileType zig setlocal commentstring=//\ %s
 
 """"""""""""""" PLUGIN STUFF """""""""""""
-
-" switch solarized themes
-call togglebg#map("<F4>")
 
 " might be needed to make erlang tag jumping work properly
 "autocmd FileType erlang setlocal iskeyword+=:
