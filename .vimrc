@@ -164,7 +164,7 @@ set wildmode=longest,list,full
 set wildmenu
 
 " non-saved tabs can be hidden (i.e. non-visible)
-"set hidden
+set nohidden
 
 " enable line numbers
 set nu
@@ -226,10 +226,10 @@ function! Indent_2_spaces()
 endfunction
 
 set expandtab autoindent shiftwidth=4 tabstop=4 softtabstop=4
-au FileType c call Indent_4_spaces()
-au FileType cpp call Indent_4_spaces()
-au FileType hpp call Indent_4_spaces()
-au FileType erlang call Indent_tabs_8s()
+au FileType c call Indent_tabs_4s()
+au FileType cpp call Indent_tabs_4s()
+au FileType hpp call Indent_tabs_4s()
+au FileType erlang call Indent_4_spaces()
 au FileType go call Indent_tabs_4s()
 au FileType haskell call Indent_2_spaces()
 au FileType html call Indent_2_spaces()
