@@ -23,9 +23,6 @@ set showcmd " Show incomplete commands
 " Professor VIM says '87% of users prefer jj over esc', jj abrams strongly disagrees
 imap jj <Esc>
 
-" sudo save!
-cmap w!! %!sudo tee > /dev/null %
-cmap qw wq
 cmap Wq wq
 
 " Add emacs-like bindings for the command line
@@ -110,6 +107,8 @@ set wildignore=*.o,*~,*.pyc,*.beam,*.hi,*.dyn_hi,*.dyn_o,*.cache,*.p_hi,*.p_o,*.
 set t_Co=256
 "set background=dark " dark for solarized dark, light for the light one
 syntax on
+
+set background=light
 
 
 " Set extra options when running in GUI mode
@@ -222,13 +221,12 @@ au FileType python call Indent_tabs_8s()
 au FileType ruby call Indent_2_spaces()
 au FileType sh call Indent_tabs_4s()
 
+autocmd FileType zig setlocal commentstring=//\ %s
+
 """"""""""""""" PLUGIN STUFF """""""""""""
 
 " switch solarized themes
 call togglebg#map("<F4>")
-
-" enable ctrlp.vim
-let g:ctrlp_map= '<c-p>'
 
 " might be needed to make erlang tag jumping work properly
 "autocmd FileType erlang setlocal iskeyword+=:
@@ -273,3 +271,7 @@ set nomodeline
       "\ 'cpp': ['/home/user/code/ccls/Release/ccls']
       "\ }
       "\ 'erlang': ['/home/user/code/sourcer/_build/default/bin/erlang_ls'],
+
+if has('nvim')
+    lua require('lua_init')
+endif
