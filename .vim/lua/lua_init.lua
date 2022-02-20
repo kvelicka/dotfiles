@@ -51,13 +51,19 @@ require("treesitter").config()
 -- nvim-lspconfig config
 -- List of all pre-configured LSP servers:
 -- github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
-require('lspconfig').zls.setup {}
--- local servers = { 'zls' }
--- for _, lsp in pairs(servers) do
-    -- require('lspconfig')[lsp].setup {
-        -- on_attach = on_attach
-    -- }
--- end
+
+local on_attach = function(client, bufnr)
+  -- Enable completion triggered by <c-x><c-o>
+  vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
+end
+
+
+local servers = { 'zls' }
+for _, lsp in pairs(servers) do
+    require('lspconfig')[lsp].setup {
+        on_attach = on_attach
+    }
+end
 -- require("configs.outlinetree").config()
 -- require("configs.startscreen").config()
 

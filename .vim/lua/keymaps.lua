@@ -61,7 +61,7 @@ mapkey('n', '<leader>sw', '/\\<lt>\\><left><left>')
 -- w: workspace
 maplua('<leader>le', 'vim.diagnostic.open_float()')
 maplua('<leader>lq', 'vim.diagnostic.setloclist()')
-maplua('<leader>lh', 'vim.lsp.buf.hover()')
+maplua('<leader>gh', 'vim.lsp.buf.hover()')
 maplua('<leader>lr', 'vim.lsp.buf.rename()')
 maplua('<leader>lk', 'vim.lsp.buf.signature_help()')
 maplua('<leader>la', 'vim.lsp.buf.code_action()')
