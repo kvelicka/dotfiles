@@ -10,3 +10,24 @@
 [submodule ".vim/bundle/syntastic"]
 	path = .vim/bundle/syntastic
 	url = https://github.com/scrooloose/syntastic.git
+[submodule ".vim/bundle/vim-commentary"]
+	path = .vim/bundle/vim-commentary
+	url = git@github.com:tpope/vim-commentary.git
+[submodule ".vim/bundle/nvim-lspconfig"]
+	path = .vim/bundle/nvim-lspconfig
+	url = git@github.com:neovim/nvim-lspconfig.git
+[submodule ".vim/bundle/nvim-treesitter"]
+	path = .vim/bundle/nvim-treesitter
+	url = git@github.com:nvim-treesitter/nvim-treesitter.git
+[submodule ".vim/bundle/plenary.nvim"]
+	path = .vim/bundle/plenary.nvim
+	url = git@github.com:nvim-lua/plenary.nvim.git
+[submodule ".vim/bundle/telescope.nvim"]
+	path = .vim/bundle/telescope.nvim
+	url = git@github.com:nvim-telescope/telescope.nvim.git
+[submodule ".vim/bundle/vim-beancount"]
+	path = .vim/bundle/vim-beancount
+	url = git@github.com:nathangrigg/vim-beancount.git
+[submodule ".vim/bundle/tagbar"]
+	path = .vim/bundle/tagbar
+	url = git@github.com:preservim/tagbar.git
