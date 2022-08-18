@@ -67,3 +67,9 @@ end
 -- require("configs.outlinetree").config()
 -- require("configs.startscreen").config()
 
+local telescope = require('telescope')
+telescope.setup {
+    defaults = {
+        layout_strategy = "vertical",
+    },
+}

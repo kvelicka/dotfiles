@@ -19,6 +19,7 @@ end
 -- y: telescope
 mapcmd('<c-p>', "Telescope find_files")
 mapcmd('<leader>fg', "Telescope live_grep")
+mapcmd('<leader>fd', "Telescope grep_string")
 mapcmd('<leader>fb', "Telescope buffers")
 mapcmd('<leader>fh', "Telescope help_tags")
 -- c: quick command

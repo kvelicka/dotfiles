@@ -52,6 +52,9 @@
 [merge]
 	conflictStyle = diff3
 
+[diff]
+    submodule = log
+
 [pull]
 	rebase = true
 	ff = only

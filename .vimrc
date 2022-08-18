@@ -239,6 +239,7 @@ au FileType ruby call Indent_2_spaces()
 au FileType sh call Indent_tabs_4s()
 
 autocmd FileType zig setlocal commentstring=//\ %s
+autocmd FileType cpp setlocal commentstring=//\ %s
 
 """"""""""""""" PLUGIN STUFF """""""""""""
 
@@ -255,7 +256,9 @@ set cursorline
 "set statusline+=%{SyntasticStatuslineFlag()}
 "set statusline+=%*
 " end of default statusline (with ruler)
-set statusline+=%=%(%l,%c%V\ %=\ %P%)
+"set statusline+=%{tagbar#currenttag('%s','', 'f', 'scoped-stl')}
+set statusline+=%=%{tagbar#currenttag('%s\ ','','f')}
+set statusline+=%(%l,%c%V\ %=\ %P%)
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 0
@@ -285,6 +288,8 @@ set nomodeline
       "\ 'cpp': ['/home/user/code/ccls/Release/ccls']
       "\ }
       "\ 'erlang': ['/home/user/code/sourcer/_build/default/bin/erlang_ls'],
+
+nmap <F8> :TagbarToggle<CR>
 
 if has('nvim')
     lua require('lua_init')
