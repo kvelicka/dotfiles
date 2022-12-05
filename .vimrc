@@ -292,6 +292,10 @@ set nomodeline
 
 nmap <F8> :TagbarToggle<CR>
 
+" enable ctrlp.vim
+let g:ctrlp_map= '<c-p>'
+
+
 if has('nvim')
     lua require('lua_init')
 endif
