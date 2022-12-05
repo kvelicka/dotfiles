@@ -118,4 +118,7 @@ export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
 ssh-add -l > /dev/null || ssh-add
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
 source "$HOME/.cargo/env"
+
+export PATH="/home/karl/bin:$PATH"
