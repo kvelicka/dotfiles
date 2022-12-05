@@ -3,7 +3,7 @@
 
     "editor.fontFamily": "InputMono Medium",
     "editor.renderWhitespace": "boundary",
-    "editor.cursorStyle": "block",
+    "editor.cursorStyle": "line",
     "editor.minimap.enabled": false,
     "editor.renderControlCharacters": false,
     "telemetry.enableTelemetry": false,
@@ -45,7 +45,6 @@
     "vim.cursorStylePerMode.insert": "line",
     "workbench.list.openMode": "doubleClick",
     "workbench.editor.enablePreviewFromQuickOpen": false,
-    "window.zoomLevel": 0,
     "C_Cpp.default.cppStandard": "c++17",
     "C_Cpp.default.intelliSenseMode": "gcc-x64",
     "editor.cursorSurroundingLines": 3,
@@ -57,7 +56,7 @@
     "editor.copyWithSyntaxHighlighting": false,
     "gitlens.statusBar.enabled": false,
     "editor.wordWrap": "on",
-    "extensions.ignoreRecommendations": false,
+    "extensions.ignoreRecommendations": true,
     "plantuml.commandArgs": [
     
     ],
@@ -68,9 +67,40 @@
     "python.showStartPage": false,
     "workbench.colorTheme": "Gruvbox Dark Medium",
     "remote.autoForwardPorts": false,
-    "python.languageServer": "Pylance",
     "rust-analyzer.diagnostics.enableExperimental": false,
     "rust-analyzer.cargo.loadOutDirsFromCheck": true,
-    "rust-analyzer.procMacro.enable": true
+    "rust-analyzer.procMacro.enable": true,
+    "cmake.configureEnvironment": {
+        "VIRTUAL_ENV": "/home/user/code/grelka/env"
+    },
+    "files.insertFinalNewline": true,
+    "zigLanguageClient.path": "/home/karl/bin/zls",
+    "[zig]": {
+        "editor.defaultFormatter": "AugusteRame.zls-vscode"
+    },
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter-notebook"
+    },
+    "errorLens.enabledDiagnosticLevels": [
+        "error",
+        "warning",
+        "info"
+    ],
+    "python.languageServer": "Pylance",
+    "editor.insertSpaces": false,
+    "editor.lineNumbers": "on",
+    "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
+    "vscode-neovim.neovimExecutablePaths.linux": "/usr/bin/nvim",
+    "notebook.cellToolbarLocation": {
+        "default": "right",
+        "jupyter-notebook": "left"
+    },
+    "beancount.completePayeeNarration": false,
+    "cmake.cmakePath": "/home/user/code/grelka/env/bin/cmake",
+    "editor.bracketPairColorization.enabled": true,
+    "cmake.configureOnEdit": false,
+    "cmake.skipConfigureIfCachePresent": true,
+    "cmake.buildDirectory": "${workspaceFolder}/build/temp.linux-x86_64-3.7",
+    "zig.buildOnSave": true
 
 }

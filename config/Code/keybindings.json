@@ -36,9 +36,15 @@
         {
             "key": "ctrl+w s",
             "command": "workbench.action.splitEditorDown"
-        }
+        },
         {
             "key": "ctrl+w v",
             "command": "workbench.action.splitEditorRight"
+        },
+        {
+            "command": "vscode-neovim.compositeEscape1",
+            "key": "j",
+            "when": "neovim.mode == insert && editorTextFocus",
+            "args": "j"
         }
 ]
