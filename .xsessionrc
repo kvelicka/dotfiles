@@ -1,3 +1,4 @@
+set -x
 # set US keyboard and ctrl instead of caps lock
 setxkbmap -layout us -option ctrl:nocaps
 
@@ -8,6 +9,6 @@ xset r rate 220 34
 xset dpms 600 630
 
 # set up home pc layout
-if [ "$(hostname)" == "karl-P5Q-PRO" ]; then
-	source "/home/karl/.screenlayout/samsung-samsung.sh"
+if [ "$(hostname)" == "pop-os" ]; then
+	source "/home/karl/.screenlayout/hdell-dell27.sh";
 fi
