@@ -4,4 +4,7 @@
 /* Completely hide the "title changed" notification dot on pinned tabs */
   .tabbrowser-tab > .tab-stack > .tab-content[pinned][titlechanged]:not([selected="true"]) {
     background-image: none !important;
+
+    /*.titlebar-placeholder[type="pre-tabs"] { display:none !important; }*/
+    /*.titlebar-spacer[type="pre-tabs"] {border-inline-end: 0px solid white !important;width: 5px !important;}*/
 }
