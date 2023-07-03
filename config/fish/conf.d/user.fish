@@ -2,7 +2,6 @@ abbr -a ll exa -lh
 abbr -a l ll
 abbr -a la exa -lah
 
-abbr -a tmux tmux -2
 # TODO make cross-platform
 abbr -a nnn nautilus . --no-desktop
 
