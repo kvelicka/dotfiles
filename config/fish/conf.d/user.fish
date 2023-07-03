@@ -45,8 +45,6 @@ abbr -a gcl git clone --recursive
 abbr -a grb git rebase
 abbr -a grbmh git rebase -i "(git merge-base HEAD origin/master)"
 
-mcfly init fish | source
-
 # https://gist.github.com/gerbsen/5fd8aa0fde87ac7a2cae
 setenv SSH_ENV $HOME/.ssh/environment
 
