@@ -45,6 +45,10 @@ abbr -a gcl git clone --recursive
 abbr -a grb git rebase
 abbr -a grbmh git rebase -i "(git merge-base HEAD origin/master)"
 
+abbr -a gddv DFT_DISPLAY=inline DFT_SYNTAX_HIGHLIGHT=off GIT_EXTERNAL_DIFF=difft git diff
+
+source ~/.asdf/asdf.fish
+
 # https://gist.github.com/gerbsen/5fd8aa0fde87ac7a2cae
 setenv SSH_ENV $HOME/.ssh/environment
 
