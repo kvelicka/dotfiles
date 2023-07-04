@@ -226,18 +226,19 @@ function! Indent_2_spaces()
     setl softtabstop=2
 endfunction
 
-set expandtab autoindent shiftwidth=4 tabstop=4 softtabstop=4
-au FileType c call Indent_tabs_4s()
-au FileType cpp call Indent_tabs_4s()
-au FileType hpp call Indent_tabs_4s()
-au FileType erlang call Indent_4_spaces()
-au FileType go call Indent_tabs_4s()
-au FileType haskell call Indent_2_spaces()
-au FileType html call Indent_2_spaces()
-au FileType javascript call Indent_2_spaces()
-au FileType python call Indent_tabs_8s()
-au FileType ruby call Indent_2_spaces()
-au FileType sh call Indent_tabs_4s()
+" Overtaken by vim-sleuth?
+" set expandtab autoindent shiftwidth=2 tabstop=2 softtabstop=2
+" au FileType c call Indent_tabs_4s()
+" au FileType cpp call Indent_tabs_4s()
+" au FileType hpp call Indent_tabs_4s()
+" au FileType erlang call Indent_4_spaces()
+" au FileType go call Indent_tabs_4s()
+" au FileType haskell call Indent_2_spaces()
+" au FileType html call Indent_2_spaces()
+" au FileType javascript call Indent_2_spaces()
+" au FileType python call Indent_tabs_2s()
+" au FileType ruby call Indent_2_spaces()
+" au FileType sh call Indent_tabs_4s()
 
 autocmd FileType zig setlocal commentstring=//\ %s
 autocmd FileType cpp setlocal commentstring=//\ %s
@@ -266,6 +267,7 @@ let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_disabled_filetypes = ['sass']
+let g:syntastic_mode_map = { 'passive_filetypes': ['python'] }
 
 
 """"""""""""""" NEOVIM STUFF """""""""""""
