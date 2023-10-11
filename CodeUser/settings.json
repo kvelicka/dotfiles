@@ -3,11 +3,14 @@
 
     "editor.fontFamily": "InputMono Medium",
     "editor.renderWhitespace": "boundary",
-    "editor.cursorStyle": "line",
+    "editor.cursorStyle": "block",
+    "workbench.colorTheme": "Gruvbox Dark Soft",
     "editor.minimap.enabled": false,
-    "editor.renderControlCharacters": false,
-    "telemetry.enableTelemetry": false,
-    "telemetry.enableCrashReporter": false,
+    "editor.renderControlCharacters": true,
+    "editor.copyWithSyntaxHighlighting": false,
+    "extensions.ignoreRecommendations": true,
+    "telemetry.telemetryLevel": "off",
+    "erlang.codeLensEnabled": true,
     // Vim mode stuff
     "vim.leader": "\\",
     "vim.insertModeKeyBindings": [
@@ -45,62 +48,33 @@
     "vim.cursorStylePerMode.insert": "line",
     "workbench.list.openMode": "doubleClick",
     "workbench.editor.enablePreviewFromQuickOpen": false,
-    "C_Cpp.default.cppStandard": "c++17",
-    "C_Cpp.default.intelliSenseMode": "gcc-x64",
     "editor.cursorSurroundingLines": 3,
     "editor.autoClosingBrackets": "never",
     "editor.autoClosingQuotes": "never",
-    "files.autoSave": "afterDelay",
-    "erlang_ls.logLevel": "info",
-    "editor.fontSize": 13,
-    "editor.copyWithSyntaxHighlighting": false,
-    "gitlens.statusBar.enabled": false,
-    "editor.wordWrap": "on",
-    "extensions.ignoreRecommendations": true,
-    "plantuml.commandArgs": [
-    
-    ],
-    "plantuml.server": "plantuml.gambit:80",
-    "plantuml.render": "PlantUMLServer",
-    "latex-workshop.view.pdf.viewer": "tab",
-    "rust-analyzer.callInfo.full": false,
-    "python.showStartPage": false,
-    "workbench.colorTheme": "Gruvbox Dark Medium",
-    "remote.autoForwardPorts": false,
-    "rust-analyzer.diagnostics.enableExperimental": false,
-    "rust-analyzer.cargo.loadOutDirsFromCheck": true,
-    "rust-analyzer.procMacro.enable": true,
-    "cmake.configureEnvironment": {
-        "VIRTUAL_ENV": "/home/user/code/grelka/env"
-    },
-    "files.insertFinalNewline": true,
-    "zigLanguageClient.path": "/home/karl/bin/zls",
-    "[zig]": {
-        "editor.defaultFormatter": "AugusteRame.zls-vscode"
-    },
     "workbench.editorAssociations": {
         "*.ipynb": "jupyter-notebook"
     },
-    "errorLens.enabledDiagnosticLevels": [
-        "error",
-        "warning",
-        "info"
-    ],
-    "python.languageServer": "Pylance",
-    "editor.insertSpaces": false,
-    "editor.lineNumbers": "on",
-    "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
-    "vscode-neovim.neovimExecutablePaths.linux": "/usr/bin/nvim",
+    "files.autoSave": "afterDelay",
     "notebook.cellToolbarLocation": {
         "default": "right",
         "jupyter-notebook": "left"
     },
-    "beancount.completePayeeNarration": false,
-    "cmake.cmakePath": "/home/user/code/grelka/env/bin/cmake",
+    "editor.wordWrap": "on",
     "editor.bracketPairColorization.enabled": true,
-    "cmake.configureOnEdit": false,
-    "cmake.skipConfigureIfCachePresent": true,
-    "cmake.buildDirectory": "${workspaceFolder}/build/temp.linux-x86_64-3.7",
-    "zig.buildOnSave": true
+    "errorLens.addAnnotationTextPrefixes": false,
+    "errorLens.enabledDiagnosticLevels": [
+        "error",
+        "warning",
+        "info",
+        // "hint"
+    ],
+    "workbench.colorCustomizations": {
+        "[Gruvbox Dark Soft]": {
+            "editorInlayHint.foreground": "#ebdbb2",
+            "editorInlayHint.background": "#643b29"
 
+        },
+    },
+    "rust-analyzer.inlayHints.typeHints.enable": false,
+    "workbench.editor.showTabs": false,
 }
