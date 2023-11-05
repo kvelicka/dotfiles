@@ -36,6 +36,7 @@ abbr -a  gf git fetch
 abbr -a  gs git status
 abbr -a  gd git diff
 abbr -a  ga git add
+abbr -a  gb git branch
 abbr -a  gc git commit -v
 abbr -a gca git commit -v -a
 abbr -a gco git checkout
@@ -45,6 +46,7 @@ abbr -a gcl git clone --recursive
 abbr -a grb git rebase
 abbr -a grbmh git rebase -i "(git merge-base HEAD origin/master)"
 
+abbr -a gdd  DFT_DISPLAY=side-by-side GIT_EXTERNAL_DIFF=difft git diff
 abbr -a gddv DFT_DISPLAY=inline DFT_SYNTAX_HIGHLIGHT=off GIT_EXTERNAL_DIFF=difft git diff
 
 source ~/.asdf/asdf.fish
@@ -71,12 +73,7 @@ function test_identities
     end
 end
 
-if [ -n "$SSH_AGENT_PID" ]
-    ps -ef | grep $SSH_AGENT_PID | grep ssh-agent > /dev/null
-    if [ $status -eq 0 ]
-        test_identities
-    end
-else
+function init_agent
     if [ -f $SSH_ENV ]
         . $SSH_ENV > /dev/null
     end
@@ -86,4 +83,15 @@ else
     else
         start_agent
     end
+end
+
+if [ -n "$SSH_AGENT_PID" ]
+    ps -ef | grep $SSH_AGENT_PID | grep ssh-agent > /dev/null
+    if [ $status -eq 0 ]
+        test_identities
+    else
+        init_agent
+    end
+else
+    init_agent
 end
