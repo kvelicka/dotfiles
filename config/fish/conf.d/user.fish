@@ -1,12 +1,12 @@
-abbr -a ll exa -lh
-abbr -a l ll
-abbr -a la exa -lah
+abbr -a ll ls -lh
+#abbr -a l ll
+abbr -a la ls -lah
 
 # TODO make cross-platform
 abbr -a nnn nautilus . --no-desktop
 
 # Ubuntu
-abbr -a install sudo apt install -y
+abbr -a install sudo emerge --ask --verbose
 abbr -a update sudo apt update
 abbr -a upgrade sudo apt upgrade
 abbr -a remove sudo apt remove
@@ -49,11 +49,14 @@ abbr -a grbmh git rebase -i "(git merge-base HEAD origin/master)"
 abbr -a gdd  DFT_DISPLAY=side-by-side GIT_EXTERNAL_DIFF=difft git diff
 abbr -a gddv DFT_DISPLAY=inline DFT_SYNTAX_HIGHLIGHT=off GIT_EXTERNAL_DIFF=difft git diff
 
-
-source ~/.asdf/asdf.fish
+#source ~/.asdf/asdf.fish
 
 # https://gist.github.com/gerbsen/5fd8aa0fde87ac7a2cae
 setenv SSH_ENV $HOME/.ssh/environment
+
+setenv EDITOR nvim
+
+#bass <(cat /etc/profile.env | grep -v PATH | psub)
 
 function start_agent
     echo "Initializing new SSH agent ..."
@@ -61,13 +64,13 @@ function start_agent
     echo "succeeded"
     chmod 600 $SSH_ENV
     . $SSH_ENV > /dev/null
-    ssh-add
+    ssh-add ~/.ssh/id_rsa ~/.ssh/github_rsa
 end
 
 function test_identities
     ssh-add -l | grep "The agent has no identities" > /dev/null
     if [ $status -eq 0 ]
-        ssh-add
+        ssh-add ~/.ssh/id_rsa ~/.ssh/github_rsa
         if [ $status -eq 2 ]
             start_agent
         end
