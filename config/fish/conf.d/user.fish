@@ -1,6 +1,6 @@
-abbr -a ll exa -lh
-abbr -a l ll
-abbr -a la exa -lah
+abbr -a ll ls -lh
+#abbr -a l ll
+abbr -a la ls -lah
 
 # TODO make cross-platform
 abbr -a nnn nautilus . --no-desktop
