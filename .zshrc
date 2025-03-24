@@ -85,8 +85,4 @@ fi
 export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
 ssh-add -l > /dev/null || ssh-add
 
-export PATH=/home/user/.nimble/bin:$PATH
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-export LD_LIBRARY_PATH="/opt/gurobi751/linux64/lib/:/home/user/code/grelka/env/lib/python3.7/site-packages/"
+export EDITOR=nvim

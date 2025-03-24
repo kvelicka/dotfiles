@@ -217,15 +217,16 @@ gaps inner 6px
 gaps outer 1px
 smart_gaps on
 
-output DP-2 {
-    res 1920x1200
+output HDMI-A-1 {
+    mode 2560x1440@144.006Hz
     pos 0 0
-    bg ~/wallpapers/SZCFS1n.jpeg stretch
+    transform 270
+    bg ~/wallpapers/w5NGPar.jpg fill
 }
 output DP-1 {
-    mode 2560x1440@143.912Hz
-    pos 1920 0
-    bg ~/wallpapers/vzAGu5F.jpeg fill
+    mode 2560x1440@144.006Hz
+    pos 1440 0
+    bg ~/wallpapers/T48A1VS.jpg fill
 }
 
 input * {

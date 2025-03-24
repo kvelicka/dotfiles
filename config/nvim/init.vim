@@ -284,7 +284,13 @@ let g:ctrlp_custom_ignore = {
 "  \ 'file': '\v\.(exe|so|dll)$',
 "  \ 'link': 'some_bad_symbolic_links',
 "  \ }
+let g:copilot_filetypes = {
+  \ 'gitcommit': v:true,
+  \ }
 
+imap <C-l> <Plug>(copilot-accept-word)
+imap <C-h> <Plug>(copilot-dismiss)
+autocmd InsertLeave * call copilot#Dismiss()
 
 if has('nvim')
     lua require('lua_init')
