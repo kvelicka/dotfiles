@@ -61,3 +61,5 @@
 
 [init]
 	defaultBranch = main
+[safe]
+	directory = /etc/portage
