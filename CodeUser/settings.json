@@ -76,5 +76,7 @@
         },
     },
     "rust-analyzer.inlayHints.typeHints.enable": false,
-    "workbench.editor.showTabs": false,
+    "extensions.experimental.affinity": {
+        "asvetliakov.vscode-neovim": 1
+    },
 }

@@ -87,6 +87,145 @@ ssh-add -l > /dev/null || ssh-add
 
 export PATH=/home/user/.nimble/bin:$PATH
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export EDITOR=nvim
 
-export LD_LIBRARY_PATH="/opt/gurobi751/linux64/lib/:/home/user/code/grelka/env/lib/python3.7/site-packages/"
+# [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+#source /home/user/.config/broot/launcher/bash/br
+
+# export PYENV_ROOT="$HOME/.pyenv"
+# export PATH="$PYENV_ROOT/bin:$PATH"
+# eval "$(pyenv init --path)"
+# eval "$(pyenv init -)"
+
+# Will's stuff
+
+# change to directory. doesn't look too deep, use it to get to project dirs
+function z() {
+	local search="${1:-.}"
+	local found=$(fd --maxdepth=3 --type d ${search} ~/code | fzf --select-1 --exit-0)
+
+	if [ -z "$found" ]; then
+		return
+	fi
+
+	if test -d ${found}; then
+		cd ${found}
+	fi
+}
+
+# change to virtualenv
+# assumes virtualenvs live in ~/.envs (because why would you pollute your repo???)
+function v() {
+	local search="${1:-.}"
+	local found=$(fd --maxdepth=1 --type d ${search} ~/.envs/ | fzf --select-1 --exit-0)
+
+	if [ -z "$found" ]; then
+		return
+	fi
+
+	if test -f ${found}/bin/activate; then
+		source ${found}/bin/activate
+	fi
+}
+
+# fuzzy file opener with preview (can also cd, which is why this is a function and not a script!)
+function ,() {
+	local dir="."
+	local search="."
+
+	command -v bat >/dev/null 2>&1 || { echo >&2 "I require bat but it's not installed.  Aborting."; exit 1; }
+	command -v fd >/dev/null 2>&1 || { echo >&2 "I require fd but it's not installed.  Aborting."; exit 1; }
+	command -v fzf >/dev/null 2>&1 || { echo >&2 "I require fzf but it's not installed.  Aborting."; exit 1; }
+	command -v rg >/dev/null 2>&1 || { echo >&2 "I require rg but it's not installed.  Aborting."; exit 1; }
+	command -v tree >/dev/null 2>&1 || { echo >&2 "I require tree but it's not installed.  Aborting."; exit 1; }
+
+	if [ -n "$1" ]; then
+		if test -f $1; then
+			$EDITOR $1
+			return
+
+		elif test -d $1; then
+			local dir=$1
+
+		elif [ $1 = "-f" ]; then
+			# Special find mode.
+			# todo: don't open if nothing found
+			# todo: allow picking search dir
+			${EDITOR} $(rg -n ${2:-.} | fzf --tac --select-1 --exit-0 | awk -F: '{print "+" $2 " " $1}')
+			return
+
+		elif [ $1 = "-t" ] || [[ $1 = +* ]]; then
+			# Trying to open tag or specific line. Just pass straight to editor.
+			${EDITOR} $*
+			return
+
+		else
+			local search=$1
+		fi
+	fi
+
+	local found=$(
+		fd \
+			--full-path \
+			--hidden \
+			--size -10m \
+			--exclude '*.gz' \
+			--exclude '*.xz' \
+			--exclude .git \
+			${search} ${dir} \
+			| fzf --tac --select-1 --exit-0 \
+				--preview="if test -f {}; then
+					bat --style=numbers --color=always --line-range :150 {}
+				else
+					tree -C -L 1 {};
+				fi"
+	)
+
+	if [ -z "$found" ]; then
+		return
+	fi
+
+	if test -d ${found}; then
+		cd ${found}
+
+	elif test -f ${found}; then
+		${EDITOR} ${found}
+	fi
+}
+
+# preview with bat. I don't use this much, YMMV.
+function p() {
+	local search="${1:-.}"
+	local dir="${2:-.}"
+
+	local found=$(
+		fd --type f ${search} ${dir} \
+			| fzf --tac --select-1 --exit-0 \
+				--preview="bat --style=numbers --color=always --line-range :150 {}"
+	)
+
+	if [ -z "$found" ]; then
+		return
+	fi
+
+	if test -f ${found}; then
+		bat --style=numbers --color=always ${found}
+	fi
+}
+
+# git checkout with fzf. doesn't work for remote really, needs more work. YMMV.
+function co() {
+	local search="${1:-.}"
+	local found=$(git branch --all \
+		| grep ${search} \
+		| fzf --select-1 --exit-0 \
+		| tr -d '[:space:]'
+	)
+
+	if [ -z "$found" ]; then
+		return
+	fi
+
+	git checkout ${found}
+}

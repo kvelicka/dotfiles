@@ -6,7 +6,7 @@ abbr -a la ls -lah
 abbr -a nnn nautilus . --no-desktop
 
 # Ubuntu
-abbr -a install sudo apt install -y
+abbr -a install sudo emerge --ask --verbose --tree
 abbr -a update sudo apt update
 abbr -a upgrade sudo apt upgrade
 abbr -a remove sudo apt remove
@@ -49,10 +49,14 @@ abbr -a grbmh git rebase -i "(git merge-base HEAD origin/master)"
 abbr -a gdd  DFT_DISPLAY=side-by-side GIT_EXTERNAL_DIFF=difft git diff
 abbr -a gddv DFT_DISPLAY=inline DFT_SYNTAX_HIGHLIGHT=off GIT_EXTERNAL_DIFF=difft git diff
 
-source ~/.asdf/asdf.fish
+#source ~/.asdf/asdf.fish
 
 # https://gist.github.com/gerbsen/5fd8aa0fde87ac7a2cae
 setenv SSH_ENV $HOME/.ssh/environment
+
+setenv EDITOR nvim
+
+#bass <(cat /etc/profile.env | grep -v PATH | psub)
 
 function start_agent
     echo "Initializing new SSH agent ..."
@@ -60,13 +64,13 @@ function start_agent
     echo "succeeded"
     chmod 600 $SSH_ENV
     . $SSH_ENV > /dev/null
-    ssh-add
+    ssh-add ~/.ssh/id_rsa ~/.ssh/github_rsa
 end
 
 function test_identities
     ssh-add -l | grep "The agent has no identities" > /dev/null
     if [ $status -eq 0 ]
-        ssh-add
+        ssh-add ~/.ssh/id_rsa ~/.ssh/github_rsa
         if [ $status -eq 2 ]
             start_agent
         end
@@ -95,3 +99,7 @@ if [ -n "$SSH_AGENT_PID" ]
 else
     init_agent
 end
+
+
+setenv LUA_PATH '/usr/share/lua/5.1/?.lua;./?.lua;/usr/share/lua/5.1/?/init.lua;/usr/lib64/lua/5.1/?.lua;/usr/lib64/lua/5.1/?/init.lua;/home/karlv/.luarocks/share/lua/5.1/?.lua;/home/karlv/.luarocks/share/lua/5.1/?/init.lua;/usr/share/lua/5.1/share/lua/5.1/?.lua;/usr/share/lua/5.1/share/lua/5.1/?/init.lua'
+setenv LUA_CPATH './?.so;/usr/lib64/lua/5.1/?.so;/usr/lib64/lua/5.1/loadall.so;/home/karlv/.luarocks/lib/lua/5.1/?.so;/usr/share/lua/5.1/lib/lua/5.1/?.so'
