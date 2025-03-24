@@ -11,7 +11,7 @@
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:monospace 8
+font pango:Input Mono 9
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -43,8 +43,9 @@ bindsym $mod+Return exec alacritty
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+Shift+d exec dmenu_run
-bindsym $mod+d exec --no-startup-id rofi -show combi -combi-modi window#workspaces:~/dotfiles/scripts/i3-workspaces#drun#run -modi combi
+bindsym $mod+Shift+d exec bemenu-run
+bindsym $mod+d exec bemenu-run
+# bindsym $mod+d exec --no-startup-id rofi -show combi -combi-modi window#workspaces:~/dotfiles/scripts/i3-workspaces#drun#run -modi combi
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
@@ -139,7 +140,7 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+e exec "swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit sway' 'swaymsg exit'"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -184,8 +185,8 @@ bindsym Control+$mod+l exec "swaylock -c 000000"
 # exec xautolock -time 9 -locker "~/scripts/lock.sh" &
 
 # Move workspaces around
-bindsym Control+$mod+Left exec "i3-msg move workspace to output left"
-bindsym Control+$mod+Right exec "i3-msg move workspace to output right"
+bindsym Control+$mod+Left exec "swaymsg move workspace to output left"
+bindsym Control+$mod+Right exec "swaymsg move workspace to output right"
 
 # Network manager applet
 exec --no-startup-id nm-applet
@@ -233,8 +234,8 @@ input * {
     repeat_rate 34
 }
 
-exec swayidle -w timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"'
-exec gammastep
+exec swayidle -w timeout 300 'swaylock -f -c 000000' timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"'
+# exec gammastep
 
 bindsym $mod+p       exec shotman --capture window
 bindsym $mod+Shift+p exec shotman --capture region
