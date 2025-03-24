@@ -72,4 +72,9 @@ telescope.setup {
     defaults = {
         layout_strategy = "vertical",
     },
+    pickers = {
+        grep_string = {
+            word_match = "-w",
+        },
+    },
 }
