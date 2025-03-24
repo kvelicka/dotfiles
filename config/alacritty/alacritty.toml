@@ -277,8 +277,5 @@ mouse = "Middle"
 [selection]
 semantic_escape_chars = ",│`|:\"' ()[]{}<>"
 
-[shell]
-program = "/opt/homebrew/bin/fish"
-
 [window]
 option_as_alt = "OnlyLeft"
