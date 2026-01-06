@@ -62,9 +62,9 @@ inoremap <S-Down> <Nop>
 
 
 " In many terminal emulators the mouse works just fine, thus enable it.
-if has('mouse')
-  set mouse=a
-endif
+"if has('mouse')
+set mouse=
+"endif
 
 
 " Only do this part when compiled with support for autocommands.
