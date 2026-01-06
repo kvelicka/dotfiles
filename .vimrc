@@ -38,6 +38,10 @@ cmap Wq wq
 :cnoremap <Esc>d <S-Right><Delete>
 :cnoremap <C-g> <C-c>
 
+
+" make Ctrl-c work like esc, i.e. trigger InsertLeave
+inoremap <C-C> <Esc>
+
 " Disable annoying shortcuts
 inoremap <S-Up> <Nop>
 inoremap <S-Down> <Nop>
