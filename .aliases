@@ -1,6 +1,6 @@
-alias ll='exa -lh'
+alias ll='ls -lh'
 alias l='ll'
-alias la='exa -lah'
+alias la='ls -lah'
 
 alias tmux='tmux -2'
 # TODO make cross-platform
@@ -12,24 +12,14 @@ alias update='sudo apt update'
 alias upgrade='sudo apt upgrade'
 alias remove='sudo apt remove'
 
-# Python
-alias py3='python3'
-alias ipy3='ipython3'
-
-alias pyserver='py3 -m SimpleHTTPServer'
-
 # Erlang
 alias r3='rebar3'
 
 # Vim
-alias vi='nvim'
+alias v='nvim'
 alias nv='nvim'
 alias vimrc='vi ~/.vimrc'
 
-# Emacs
-alias  e='emacsclient'
-alias et='emacsclient -t'
-alias ec='emacsclient -nc'
 
 # Git
 alias   g='git'
@@ -48,11 +38,3 @@ alias gcp='git cherry-pick'
 alias gcl='git clone --recursive'
 alias grb='git rebase'
 alias grbmh='git rebase -i $(git merge-base HEAD origin/master)'
-
-# greps
-alias grep='grep  --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn} --exclude=tags -I'
-alias egrep='egrep  --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn} --exclude=tags -I'
-alias fgrep='fgrep  --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn} --exclude=tags -I'
-alias rgrep='rgrep  --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn} --exclude=tags -I -n'
-alias grepc='grep  --color=always --exclude-dir={.bzr,CVS,.git,.hg,.svn} --exclude=tags -I'
-alias rgrepc='rgrep  --color=always --exclude-dir={.bzr,CVS,.git,.hg,.svn} --exclude=tags -I -n'
