@@ -148,7 +148,7 @@ set wildmenu
 set nohidden
 
 " enable line numbers
-set nu
+" set nu
 "set relativenumber
 
 " always keep at least 10 lines visible
@@ -208,7 +208,8 @@ function! Indent_2_spaces()
 endfunction
 
 " Overtaken by vim-sleuth?
-" set expandtab autoindent shiftwidth=2 tabstop=2 softtabstop=2
+" not tabstop!
+set tabstop=4
 " au FileType c call Indent_tabs_4s()
 " au FileType cpp call Indent_tabs_4s()
 " au FileType hpp call Indent_tabs_4s()
